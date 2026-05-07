@@ -9,7 +9,7 @@ body {
   left: 28px;
   right: 28px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   pointer-events: none;
 }
 
@@ -30,13 +30,14 @@ body {
 .page {
   min-height: calc(100svh - 56px);
   display: grid;
-  place-items: center;
+  justify-items: start;
+  align-items: start;
   padding: clamp(16px, 4vw, 48px);
 }
 
 .hero-image {
   display: block;
-  width: min(92vw, 720px);
+  width: min(100%, 720px);
   max-height: calc(100svh - 2 * clamp(16px, 4vw, 48px));
   height: auto;
   object-fit: contain;
