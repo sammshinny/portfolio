@@ -3,10 +3,22 @@ body {
   height: 100%;
 }
 
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
-    color: #fff;
+.site-header {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Nimbus Sans L", "Nimbus Sans", Arial, Helvetica, sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  color: #fff;
+  pointer-events: auto;
 }
 
 body {
