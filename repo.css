@@ -1,0 +1,479 @@
+/* Frame 3 from Figma — fixed artboard; horizontal scroll on narrow viewports */
+.repo-body {
+  margin: 0;
+  background: #d9d9d9;
+}
+
+.repo-scroll {
+  min-height: 100vh;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.case-frame {
+  position: relative;
+  width: 1920px;
+  height: 14042px;
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  font-family: "Nimbus Sans L", "Nimbus Sans", Arial, Helvetica, sans-serif;
+}
+
+.case-frame p {
+  margin: 0;
+}
+
+.case-frame a[data-node-id] {
+  color: inherit;
+  text-decoration: none;
+}
+
+.case-frame a[data-node-id]:hover {
+  text-decoration: underline;
+}
+
+.case-abs {
+  position: absolute;
+}
+
+.case-frame [data-node-id] {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.case-frame [data-node-id="5:46"] {
+  left: 24px;
+  top: 24px;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -2.88px;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="5:47"],
+.case-frame [data-node-id="5:48"],
+.case-frame [data-node-id="5:49"],
+.case-frame [data-node-id="5:50"] {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -1.6px;
+  white-space: nowrap;
+  top: 38px;
+}
+
+.case-frame [data-node-id="5:47"] {
+  left: 1624px;
+}
+
+.case-frame [data-node-id="5:48"] {
+  left: 1695px;
+}
+
+.case-frame [data-node-id="5:49"] {
+  left: 1760px;
+}
+
+.case-frame [data-node-id="5:50"] {
+  left: 1836px;
+}
+
+.case-frame [data-node-id="5:52"] {
+  left: 24px;
+  top: 160px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="5:52"] .repo-muted {
+  font-weight: 400;
+  color: #636363;
+}
+
+.case-frame [data-node-id="5:54"],
+.case-frame [data-node-id="5:56"],
+.case-frame [data-node-id="5:58"],
+.case-frame [data-node-id="5:62"],
+.case-frame [data-node-id="5:64"] {
+  left: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #636363;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="5:54"] {
+  top: 265px;
+}
+
+.case-frame [data-node-id="5:56"] {
+  top: 345px;
+}
+
+.case-frame [data-node-id="5:58"] {
+  top: 425px;
+}
+
+.case-frame [data-node-id="5:62"] {
+  left: 688px;
+  top: 265px;
+}
+
+.case-frame [data-node-id="5:64"] {
+  left: 1349px;
+  top: 265px;
+}
+
+.case-frame [data-node-id="5:55"],
+.case-frame [data-node-id="5:57"],
+.case-frame [data-node-id="5:59"] {
+  left: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="5:55"] {
+  top: 292px;
+}
+
+.case-frame [data-node-id="5:57"] {
+  top: 372px;
+}
+
+.case-frame [data-node-id="5:59"] {
+  top: 452px;
+}
+
+.case-frame [data-node-id="5:63"] {
+  left: 688px;
+  top: 345px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1133;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="5:63"] p {
+  margin: 0 0 0.15em;
+}
+
+.case-frame [data-node-id="5:63"] p:last-child {
+  margin-bottom: 0;
+}
+
+.case-frame [data-node-id="5:74"] {
+  left: 1349px;
+  top: 311px;
+  width: 547px;
+  height: 179px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.06167;
+}
+
+.case-frame [data-node-id="23:25"] {
+  left: 23px;
+  top: 649px;
+  width: 1873px;
+  height: 1054px;
+  overflow: hidden;
+  background: #0b0f14;
+}
+
+.case-frame [data-node-id="23:25"] .case-video__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-frame [data-node-id="32:19"] {
+  left: 24px;
+  top: 6532px;
+  font-size: 16px;
+  color: #636363;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="32:20"] {
+  left: 980px;
+  top: 6446px;
+  font-size: 16px;
+  color: #636363;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="32:24"] {
+  left: 24px;
+  top: 6567px;
+  font-size: 16px;
+  line-height: 1.1133;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="32:24"] p {
+  margin: 0 0 0.15em;
+}
+
+.case-frame [data-node-id="32:28"] {
+  left: 980px;
+  top: 6535px;
+  width: 547px;
+  height: 179px;
+  font-size: 16px;
+  line-height: 1.06167;
+}
+
+.case-frame [data-node-id="8:89"] {
+  left: 24px;
+  top: 11800px;
+  width: 1872px;
+  height: 1053px;
+  background: #ececec;
+}
+
+.case-frame [data-node-id="8:90"] {
+  left: 960px;
+  top: 11800px;
+  width: 936px;
+  height: 1053px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="8:90"] img {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.case-frame [data-node-id="8:93"] {
+  left: 800px;
+  top: 11728px;
+  font-size: 36px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="10:2"] {
+  left: 24px;
+  top: 4916px;
+  width: 1872px;
+  height: 1289px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="10:2"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-frame [data-node-id="22:3"] {
+  left: 26px;
+  top: 12997px;
+  width: 935px;
+  height: 526px;
+  background: #f2f2f2;
+}
+
+.case-frame [data-node-id="23:6"] {
+  left: 24px;
+  top: 1891px;
+  width: 1203px;
+  height: 677px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="23:6"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-frame [data-node-id="23:4"] {
+  left: 960px;
+  top: 2725px;
+  width: 936px;
+  height: 525px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="23:4"] img {
+  position: absolute;
+  inset: 0;
+  width: 100.09%;
+  height: 100.38%;
+  left: -0.05%;
+  top: -0.38%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.case-frame [data-node-id="23:5"] {
+  left: 44px;
+  top: 2636px;
+  width: 916px;
+  height: 527px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="23:5"] img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 97.77%;
+  top: -0.02%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.case-frame [data-node-id="23:8"] {
+  left: 1270px;
+  top: 2089px;
+  font-size: 36px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="23:9"] {
+  left: 1270px;
+  top: 2177px;
+  width: 620px;
+  font-size: 24px;
+  line-height: normal;
+}
+
+.case-frame [data-node-id="29:31"] {
+  left: 196px;
+  top: 3546px;
+  width: 620px;
+  font-size: 24px;
+  line-height: normal;
+}
+
+.case-frame [data-node-id="30:4"] {
+  left: 196px;
+  top: 4749px;
+  width: 620px;
+  font-size: 24px;
+  line-height: normal;
+}
+
+.case-frame [data-node-id="30:2"] {
+  left: 1118px;
+  top: 4381px;
+  width: 620px;
+  font-size: 24px;
+  line-height: normal;
+}
+
+.case-frame [data-node-id="29:30"],
+.case-frame [data-node-id="30:5"],
+.case-frame [data-node-id="31:15"],
+.case-frame [data-node-id="30:3"] {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.case-frame [data-node-id="29:30"] {
+  left: 24px;
+  top: 3473px;
+}
+
+.case-frame [data-node-id="30:5"] {
+  left: 24px;
+  top: 4676px;
+}
+
+.case-frame [data-node-id="31:15"] {
+  left: 24px;
+  top: 6422px;
+}
+
+.case-frame [data-node-id="30:3"] {
+  left: 1118px;
+  top: 4306px;
+}
+
+.case-frame [data-node-id="29:30"] .repo-muted,
+.case-frame [data-node-id="30:5"] .repo-muted,
+.case-frame [data-node-id="31:15"] .repo-muted,
+.case-frame [data-node-id="30:3"] .repo-muted {
+  font-weight: 400;
+  color: #636363;
+}
+
+.case-frame [data-node-id="23:28"] {
+  left: 24px;
+  top: 3768px;
+  width: 1872px;
+  height: 384px;
+  overflow: hidden;
+}
+
+.case-frame [data-node-id="23:28"] img {
+  position: absolute;
+  width: 101.5%;
+  height: 100.02%;
+  left: -0.21%;
+  top: -0.01%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.case-img {
+  overflow: hidden;
+}
+
+.case-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-frame [data-node-id="31:6"] {
+  left: 24px;
+  top: 7269px;
+  width: 1872px;
+  height: 1053px;
+}
+
+.case-frame [data-node-id="31:7"] {
+  left: 980px;
+  top: 6716px;
+  width: 916px;
+  height: 515px;
+}
+
+.case-frame [data-node-id="31:8"] {
+  left: 24px;
+  top: 6716px;
+  width: 915px;
+  height: 515px;
+}
+
+.case-frame [data-node-id="31:12"] {
+  left: 24px;
+  top: 8362px;
+  width: 915px;
+  height: 515px;
+}
+
+.case-frame [data-node-id="31:13"] {
+  left: 981px;
+  top: 8362px;
+  width: 915px;
+  height: 515px;
+}
