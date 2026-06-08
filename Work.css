@@ -1,0 +1,329 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+html, body {
+  background: #f6f6f6;
+  color: #000;
+}
+
+/* ── Typography helpers ── */
+.t-switzer-medium  { font-family: 'Switzer', sans-serif; font-weight: 500; }
+.t-switzer-light   { font-family: 'Switzer', sans-serif; font-weight: 300; }
+.t-switzer-regular { font-family: 'Switzer', sans-serif; font-weight: 400; }
+.t-mono-regular    { font-family: 'Geist Mono', monospace; font-weight: 400; }
+.t-mono-medium     { font-family: 'Geist Mono', monospace; font-weight: 500; }
+.t-mono-light      { font-family: 'Geist Mono', monospace; font-weight: 300; }
+.t-jetbrains       { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+
+/* ─────────────────────────
+   HEADER
+───────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 78px;
+  box-sizing: border-box;
+  background: #f6f6f6;
+  border-bottom: 0.5px solid #000;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(20px, calc((100% - 1484px) / 2));
+}
+
+.site-name {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -2.16px;
+  color: #000;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.header-nav {
+  display: flex;
+  gap: 51px;
+  align-items: center;
+}
+
+.header-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1.6px;
+  color: #000;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.header-nav a:hover { text-decoration: underline; }
+
+/* ─────────────────────────
+   PAGE WRAPPER
+───────────────────────── */
+.page-wrap {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* ─────────────────────────
+   BACKGROUND GRID OVERLAY
+───────────────────────── */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.grid-rail,
+.grid-col {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 0.5px;
+}
+
+.grid-rail { background: #000; }
+.grid-col  { background: rgba(0, 0, 0, 0.5); }
+
+.grid-rail--left  { left: 200px; }
+.grid-rail--right { right: 200px; }
+.grid-col--1 { left: 580px; }
+.grid-col--2 { left: 960px; }
+.grid-col--3 { left: 1340px; }
+
+/* ─────────────────────────
+   SECTION DIVIDERS
+───────────────────────── */
+.section-divider {
+  position: relative;
+  height: 0.5px;
+  background: #000;
+  margin: 0 200px;
+}
+
+.divider-mark {
+  position: absolute;
+  top: -5.5px;
+  width: 11px; height: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+}
+.divider-mark::before { content: '+'; }
+.divider-mark--left  { left:  -5.5px; }
+.divider-mark--right { right: -5.5px; }
+
+/* ─────────────────────────
+   CASE STUDY HEADER BOX
+───────────────────────── */
+.cs-header-box {
+  position: relative;
+  border-left: 0.5px solid #000;
+  border-right: 0.5px solid #000;
+  border-bottom: 0.5px solid #000;
+  margin: 0 200px;
+  padding: 148px 18px 18px;
+}
+
+.corner-cross {
+  position: absolute;
+  bottom: -5.5px;
+  width: 11px; height: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+  z-index: 1;
+}
+.corner-cross::before { content: '+'; }
+.corner-cross--left  { left:  -5.5px; }
+.corner-cross--right { right: -5.5px; }
+
+.cs-header-inner {
+  display: grid;
+  grid-template-columns: 1fr 344px;
+  column-gap: 36px;
+  align-items: end;
+}
+
+.cs-project-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  align-self: start;
+}
+
+.cs-date-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.cs-title {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 1;
+  letter-spacing: -3.84px;
+  color: #000;
+}
+
+.cs-desc {
+  font-size: 16px;
+  letter-spacing: -1.28px;
+  line-height: normal;
+  color: #000;
+  align-self: end;
+  padding-bottom: 2px;
+}
+
+/* ─────────────────────────
+   WORK THUMBNAIL GRID
+   Thumbnails span x=218–951 (left) and x=969–1702 (right)
+   → margin: 0 218px, gap: 18px, two equal columns
+───────────────────────── */
+.work-grid {
+  margin: 0 218px;
+}
+
+.work-thumb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.work-thumb {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 733 / 412;
+  display: block;
+}
+
+.work-thumb img,
+.work-thumb video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video hidden by default; shown on hover via JS */
+.work-thumb video { display: none; }
+
+a.work-thumb { cursor: pointer; }
+
+.work-label-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.work-label {
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────
+   FOOTER
+───────────────────────── */
+.footer {
+  margin: 0 218px;
+}
+
+.footer-headline {
+  font-size: 96px;
+  letter-spacing: -2.88px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact {
+  display: block;
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.footer-contact + .footer-contact { margin-top: 45px; }
+.footer-contact:hover { text-decoration: underline; }
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-credits {
+  font-size: 12px;
+  line-height: normal;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 16.5px;
+}
+
+.back-to-top {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.back-to-top:hover { text-decoration: underline; }
+
+/* ─────────────────────────
+   SPACING TOKENS
+───────────────────────── */
+.mt-xs  { margin-top: 16px; }
+.mt-18  { margin-top: 18px; }
+.mt-sm  { margin-top: 24px; }
+.mt-md  { margin-top: 40px; }
+.mt-lg  { margin-top: 56px; }
+.mt-xl  { margin-top: 80px; }
+.mt-2xl { margin-top: 120px; }
+.mb-sm  { margin-bottom: 24px; }
+.mb-md  { margin-bottom: 40px; }

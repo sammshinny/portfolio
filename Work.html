@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Work.css">
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="#">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <main class="page-wrap">
+
+    <!-- ── BACKGROUND GRID LINES ── -->
+    <div class="grid-overlay" aria-hidden="true">
+      <div class="grid-rail grid-rail--left"></div>
+      <div class="grid-rail grid-rail--right"></div>
+      <div class="grid-col grid-col--1"></div>
+      <div class="grid-col grid-col--2"></div>
+      <div class="grid-col grid-col--3"></div>
+    </div>
+
+    <!-- ── HERO BOX ── -->
+    <div class="cs-header-box">
+      <div class="cs-header-inner">
+        <div class="cs-project-detail">
+          <div class="cs-date-row">
+            <span class="t-mono-light">[CASE STUDY]</span>
+            <span class="t-mono-regular">2025</span>
+          </div>
+          <h1 class="cs-title">Curiosity<br>through motion</h1>
+        </div>
+        <p class="cs-desc t-mono-light">My work is driven by curiosity. Through motion and iterative experimentation, I explore ideas and make them come to life.</p>
+      </div>
+      <div class="corner-cross corner-cross--left"  aria-hidden="true"></div>
+      <div class="corner-cross corner-cross--right" aria-hidden="true"></div>
+    </div>
+
+    <!-- ── THUMBNAIL GRID ── -->
+    <section class="work-grid mt-18">
+
+      <!-- Row 1 -->
+      <div class="work-thumb-row">
+        <a href="repo.html" class="work-thumb">
+          <img src="assets/repo/Frame 1.png" alt="Repo — Brand video">
+          <video src="assets/landingpage/Repo_Thumbnail.mp4" muted loop playsinline></video>
+        </a>
+        <div class="work-thumb">
+          <img src="assets/landingpage/Lumiere_thumbnail.png" alt="Lumiere — Multi sensory experience">
+          <video src="assets/landingpage/Lumiere_Thumbnail.mp4" muted loop playsinline></video>
+        </div>
+      </div>
+
+      <div class="work-label-row mt-sm">
+        <p class="work-label"><span class="t-mono-medium">01</span><span class="t-mono-light"> Repo — Brand video</span></p>
+        <p class="work-label"><span class="t-mono-medium">02</span><span class="t-mono-light"> Lumiere — Multi sensory experience</span></p>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="work-thumb-row mt-xl">
+        <div class="work-thumb">
+          <img src="assets/landingpage/headspace_thumbnail.png" alt="Sleep by Headspace — App promo/explainer video">
+          <video src="assets/landingpage/Headspace_Thumbnail.mp4" muted loop playsinline></video>
+        </div>
+        <div class="work-thumb">
+          <img src="assets/landingpage/studio-925_thumbnail.png" alt="Studio 925 — System Showcase">
+          <video src="assets/landingpage/925_Thumbnail.mp4" muted loop playsinline></video>
+        </div>
+      </div>
+
+      <div class="work-label-row mt-sm">
+        <p class="work-label"><span class="t-mono-medium">03</span><span class="t-mono-light"> Sleep by Headspace — App promo/explainer video</span></p>
+        <p class="work-label"><span class="t-mono-medium">04</span><span class="t-mono-light"> Studio 925 — System Showcase</span></p>
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer mt-xl">
+
+      <p class="footer-headline t-switzer-medium">Coffee? Chat?</p>
+
+      <div class="footer-cols mt-2xl">
+        <div class="footer-left">
+          <a class="footer-contact t-mono-regular" href="mailto:sammshinny@gmail.com">Sammshinny@gmail.com</a>
+          <a class="footer-contact t-mono-regular" href="https://www.instagram.com/sam_sam_sam_shin/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-contact t-mono-regular" href="https://www.linkedin.com/in/sam-shin-731513104/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+        <div class="footer-right">
+          <p class="footer-contact t-mono-regular">Auckland, New Zealand</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row mt-2xl mb-md">
+        <div class="footer-credits t-mono-light">
+          <p>DESIGNED BY SAM SHIN</p>
+          <p>@2026_ALL_RIGHTS_RESERVED</p>
+        </div>
+        <a class="back-to-top t-mono-light" href="#">[Back to top ↑]</a>
+      </div>
+
+    </footer>
+
+    <div class="section-divider mb-md"></div>
+
+  </main>
+
+<script>
+(function () {
+
+  /* ── Thumbnail hover: show video on enter, revert to img on leave ── */
+  document.querySelectorAll('.work-thumb').forEach(function (thumb) {
+    var img   = thumb.querySelector('img');
+    var video = thumb.querySelector('video');
+    if (!video || !img) return;
+
+    thumb.addEventListener('mouseenter', function () {
+      img.style.display   = 'none';
+      video.style.display = 'block';
+      video.currentTime   = 0;
+      video.play();
+    });
+
+    thumb.addEventListener('mouseleave', function () {
+      video.pause();
+      video.style.display = 'none';
+      img.style.display   = 'block';
+    });
+  });
+
+  /* ── Back to top ── */
+  var btt = document.querySelector('.back-to-top');
+  if (btt) btt.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+}());
+</script>
+</body>
+</html>

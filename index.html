@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/nimbus-sans-l" type="text/css"/>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="site-title"><a href="index.html">Portfolio</a></h1>
-        <nav class="site-nav" aria-label="Primary">
-            <a href="repo.html">Work</a>
-            <a href="#">Play</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-    <main class="page">
-        <video src="assets/lumiere/Lumiere thumbnail.webm" loop autoplay muted playsinline preload="auto"></video>
-    </main>
-    
+
+  <div class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="#">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <div class="hero-video-wrap">
+    <video id="bg-video" muted playsinline preload="auto"></video>
+  </div>
+
+<script>
+(function () {
+  var playlist = [
+    'assets/landingpage/925_Thumbnail.mp4',
+    'assets/landingpage/Headspace_Thumbnail.mp4',
+    'assets/landingpage/Lumiere_Thumbnail.mp4',
+    'assets/landingpage/Repo_Thumbnail.mp4'
+  ];
+  var idx = 0;
+  var vid    = document.getElementById('bg-video');
+  var header = document.querySelector('.header');
+
+  /* ── Sequential playback ── */
+  function play(i) {
+    vid.src = playlist[i];
+    vid.play();
+  }
+
+  vid.addEventListener('ended', function () {
+    idx = (idx + 1) % playlist.length;
+    play(idx);
+  });
+
+  play(0);
+
+  /* ── Adaptive header contrast ──
+     Sample an 8×8 tile from the top of the video frame on every
+     animation frame. Average luminance > 0.5 → background is light
+     → switch header text to black. Below → keep white.          */
+  var canvas = document.createElement('canvas');
+  canvas.width  = 8;
+  canvas.height = 8;
+  var ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+  function tick() {
+    if (vid.readyState >= 2) {
+      try {
+        /* Map viewport header height to video coordinates */
+        var srcH = Math.ceil(vid.videoHeight * (78 / window.innerHeight));
+        ctx.drawImage(vid, 0, 0, vid.videoWidth, srcH, 0, 0, 8, 8);
+        var px  = ctx.getImageData(0, 0, 8, 8).data;
+        var lum = 0;
+        for (var i = 0; i < px.length; i += 4) {
+          lum += 0.2126 * (px[i] / 255)
+               + 0.7152 * (px[i + 1] / 255)
+               + 0.0722 * (px[i + 2] / 255);
+        }
+        lum /= (px.length / 4);
+        header.classList.toggle('header--dark', lum > 0.85);
+      } catch (e) { /* video not ready or cross-origin */ }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  tick();
+}());
+</script>
+
 </body>
 </html>

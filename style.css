@@ -1,96 +1,81 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html,
-body {
-  height: 100%;
-}
-
-main {
-  padding: 0;
-  margin: 0;
+/* ── Base ── */
+html, body {
   width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
 }
 
-
-
-.site-header {
-  position: fixed;
-  top: 28px;
-  left: 28px;
-  right: 28px;
+/* ─────────────────────────
+   HEADER
+   Same structure as repo.html — white text, transparent bg, over video
+───────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 78px;
+  box-sizing: border-box;
+  background: transparent;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.35);
+  z-index: 100;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-  pointer-events: none;
-}
-
-.site-title {
-  margin: 0;
-  font-family: "Nimbus Sans L", "Nimbus Sans", Arial, Helvetica, sans-serif;
-  font-size: clamp(28px, 5vw, 48px);
+  padding: 0 max(20px, calc((100% - 1484px) / 2));
   color: #fff;
-  pointer-events: auto;
+  transition: color 0.5s ease, border-bottom-color 0.5s ease;
 }
 
-.site-title a {
+/* Dynamically switched by JS when background luminance is high */
+.header--dark {
+  color: #000;
+  border-bottom-color: rgba(0, 0, 0, 0.35);
+}
+
+.site-name {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -2.16px;
   color: inherit;
   text-decoration: none;
+  line-height: normal;
 }
 
-.site-title a:hover {
-  text-decoration: underline;
-}
-
-.site-nav {
+.header-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(12px, 2vw, 32px);
-  justify-content: flex-end;
-  font-family: "Nimbus Sans L", "Nimbus Sans", Arial, Helvetica, sans-serif;
-  font-size: clamp(14px, 2vw, 20px);
-  letter-spacing: -0.06em;
-  pointer-events: auto;
+  gap: 51px;
+  align-items: center;
 }
 
-.site-nav a {
-  color: #fff;
+.header-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1.6px;
+  color: inherit;
   text-decoration: none;
-  white-space: nowrap;
+  line-height: normal;
 }
 
-.site-nav a:hover {
-  text-decoration: underline;
+.header-nav a:hover { text-decoration: underline; }
+
+/* ─────────────────────────
+   FULL-BLEED VIDEO
+───────────────────────── */
+.hero-video-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
-body {
-  margin: 0;
-  background: #0b0f14;
-}
-
-.page {
-  min-height: calc(100svh - 56px);
-  display: grid;
-  justify-items: start;
-  align-items: start;
-  padding: clamp(16px, 4vw, 48px);
-  padding: 0;;
-}
-
-.hero-image {
+.hero-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  width: min(100%, 720px);
-  max-height: calc(100svh - 2 * clamp(16px, 4vw, 48px));
-  height: auto;
-  object-fit: contain;
-}
-
-video {
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }
