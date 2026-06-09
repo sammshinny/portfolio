@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumiere — Case Study | Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lumiere.css">
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="play.html">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <main class="page-wrap">
+
+    <!-- ── BACKGROUND GRID LINES ── -->
+    <div class="grid-overlay" aria-hidden="true">
+      <div class="grid-rail grid-rail--left"></div>
+      <div class="grid-rail grid-rail--right"></div>
+      <div class="grid-col grid-col--1"></div>
+      <div class="grid-col grid-col--2"></div>
+      <div class="grid-col grid-col--3"></div>
+    </div>
+
+    <!-- ── CASE STUDY HEADER BOX ── -->
+    <div class="cs-header-box">
+      <div class="cs-header-inner">
+        <div class="cs-project-detail">
+          <div class="cs-date-row">
+            <span class="t-mono-light">[CASE STUDY]</span>
+            <span class="t-mono-regular">2026</span>
+          </div>
+          <p class="cs-title">LUMIERE</p>
+        </div>
+        <p class="cs-desc t-mono-light">A multi-sensory, audio reactive experience that blends sound, tactility and live reactive visuals</p>
+      </div>
+      <div class="corner-cross corner-cross--left"  aria-hidden="true"></div>
+      <div class="corner-cross corner-cross--right" aria-hidden="true"></div>
+    </div>
+
+    <!-- ── HERO VIDEO ── -->
+    <section class="hero-section mt-18">
+      <div class="hero-media" id="hero-media">
+        <video id="hero-video" poster="assets/landingpage/Lumiere_thumbnail.png">
+          <source src="assets/lumiere/Lumiere%20thumbnail_1.mp4" type="video/mp4">
+        </video>
+        <button class="vid-center-play" id="vid-center-play" aria-label="Play"></button>
+        <div class="vid-controls" id="vid-controls">
+          <button class="vid-pp" id="vid-pp" data-state="paused" aria-label="Play/Pause"></button>
+          <div class="vid-scrub" id="vid-scrub">
+            <div class="vid-scrub-fill" id="vid-scrub-fill"></div>
+          </div>
+          <button class="vid-fs" id="vid-fs" aria-label="Fullscreen"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── METADATA STRIP ── -->
+    <div class="section-divider mt-18">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+    <div class="meta-section">
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[CONTEXT]</p>
+        <p class="meta-value t-mono-light">Group project</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[TIMELINE]</p>
+        <p class="meta-value t-mono-light">8 weeks</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[ROLE]</p>
+        <p class="meta-value t-mono-light">Team lead | Experience design | Installation builder</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[Tools]</p>
+        <p class="meta-value t-mono-light">Adobe Ae | Blender | Unreal Engine5</p>
+      </div>
+    </div>
+    <div class="section-divider"></div>
+
+    <!-- ── EXHIBITION WIP ── -->
+    <section>
+
+      <div class="section-divider mt-2xl"></div>
+      <div class="section-label-row mt-xl">
+        <p class="section-label t-mono-light">[EXHIBITION WIP]</p>
+      </div>
+
+      <div class="content-slider mt-md" id="exhibition-slider">
+
+        <!-- Slide 1 -->
+        <div id="exh_page_1" class="slider-page" style="height:1070px">
+          <div class="slide-cell" style="left:0;top:0;width:344px;height:516px">
+            <img src="assets/lumiere/open-4.png" alt="Lumiere open day">
+          </div>
+          <div class="slide-cell" style="left:380px;top:0;width:1104px;height:621px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/Lumiere%20open%20day%20video_web.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="slide-cell" style="left:0;top:552px;width:345px;height:518px">
+            <img src="assets/lumiere/open-1.png" alt="Lumiere open day">
+          </div>
+          <p class="slide-text t-switzer-light" style="left:760px;top:776px;width:724px">
+            As a part of the MDS Unleashed open day event, our project was selected to exhibit on behalf of the BMD course to potential students and their parents. The experience was a large success as visitors enjoyed the experience with huge smiles and marveled at the installation. The installation was modified to be very responsive due to the quick try and go nature of such events and provided to be an incredibly valuable prototype where we got invaluable user testing done.
+          </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div id="exh_page_2" class="slider-page" style="height:1070px;display:none">
+          <div class="slide-cell" style="left:0;top:0;width:724px;height:407px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/IMG_6522.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="slide-cell" style="left:760px;top:0;width:724px;height:483px">
+            <img src="assets/lumiere/open-10.png" alt="Lumiere open day visitors">
+          </div>
+          <div class="slide-cell" style="left:0;top:445px;width:724px;height:625px">
+            <img src="assets/lumiere/open-8.png" alt="Lumiere open day">
+          </div>
+          <p class="slide-text t-switzer-light" style="left:760px;top:776px;width:724px">
+            There was a huge range of different visitors throughout the day, from families, to groups of friends and even the MDS media team that interviewed us. There were some hiccups- like the Unreal executable that kept on shifting the camera every 15 minutes and the absolute chaos of the setup process. Despite those moments however, it was incredibly rewarding to see all these different people having fun and marveling at the work we created.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="production-counter mt-xs">
+        <p class="counter-text t-switzer-light" id="page_indicator_0">1/2</p>
+      </div>
+
+    </section>
+
+    <div class="section-divider mt-xl"></div>
+
+    <!-- ── CONTEXT / RESEARCH ── -->
+    <section>
+
+      <div class="context-grid mt-2xl">
+
+        <!-- Left column: screenshot + urbaniac list -->
+        <div class="context-left">
+          <img class="context-screenshot" src="assets/lumiere/context-screenshot.png" alt="Research reference">
+          <div class="mt-2xl">
+            <p class="urbaniac-title t-mono-light">[The Urbaniac]</p>
+            <p class="urbaniac-item t-mono-light mt-xs">Sensory bottleneck</p>
+            <p class="urbaniac-item t-mono-light mt-xs">Adverse to ecoshame</p>
+            <p class="urbaniac-item t-mono-light mt-xs">Curious</p>
+          </div>
+        </div>
+
+        <!-- Center gap -->
+        <div></div>
+
+        <!-- Right column: heading + body copy -->
+        <div>
+          <p class="context-heading">
+            As part of a theoretical group project, we were tasked to use play as a design tool to encourage meaningful engagement with nature.
+          </p>
+          <p class="context-body mt-xl">
+            As a group, we sought to tackle a very specific target audience- The Urbaniac. These Urbaniacs were a difficult group to tackle as the two opposing hypotheses: Biophilia and Biophobia were both relevant to them. They loved selective aspects of nature such as the sound of rain (when indoors) but hated things like discomfort, dirt and other unfamiliar critters.
+          </p>
+          <p class="context-body mt-md">
+            Throughout our research, we found that these Urbaniacs enjoyed parts of nature that were within their control- enjoying nature as scenery or as an ambient soundscape. This target audience was sophisticated- they preferred curated, polished and high tech environments that offered a novel, controlled experience.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="context-conclusion mt-2xl">
+        Therefore, we explored how playful, multisensory experiences could counter sensory bottlenecking caused by urban life, using curiosity, wonder and collaborative attention as a gateway to greater awareness, embodiment and care.
+      </p>
+
+    </section>
+
+    <div class="section-divider mt-2xl"></div>
+
+    <!-- ── INITIAL EXPERIMENTS ── -->
+    <section>
+
+      <div class="section-label-row mt-2xl">
+        <p class="section-label t-mono-light">[INITIAL EXPERIMENTS]</p>
+      </div>
+
+      <div class="content-slider mt-md" id="experiments-slider">
+
+        <!-- Experiment 1: MakeyMakey + conductive elements -->
+        <div id="lum_exp_page_1" class="slider-page" style="height:1070px">
+          <!-- TEST2 node: water tank LED -->
+          <div class="slide-cell" style="left:0;top:0;width:724px;height:407px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/TEST2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- IMG_5401: rotated -90° to fit landscape crop in portrait frame -->
+          <div style="position:absolute;left:760px;top:0;width:724px;height:407px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+            <div style="transform:rotate(-90deg);flex-shrink:0;width:407px;height:724px;position:relative;overflow:hidden">
+              <img src="assets/lumiere/img-5401.png" alt="Rock with copper tape" style="position:absolute;width:134.73%;height:100.98%;left:-34.73%;top:-0.92%;max-width:none">
+            </div>
+          </div>
+          <!-- tEST1 node: person at build desk -->
+          <div class="slide-cell" style="left:0;top:443px;width:345px;height:627px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/tEST1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- test3 node: hands with MakeyMakey -->
+          <div class="slide-cell" style="left:380px;top:443px;width:724px;height:407px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/test3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="slide-text t-switzer-light" style="left:760px;top:992px;width:724px">
+            To achieve audioreactive tactility, we experimented with midi devices like the MakeyMakey and TouchMe and connected them to raw elements from nature such as water, rocks and seashells with conductive copper tape.
+          </p>
+        </div>
+
+        <!-- Experiment 2: Water tank build -->
+        <div id="lum_exp_page_2" class="slider-page" style="height:1070px;display:none">
+          <div class="slide-cell" style="left:0;top:0;width:345px;height:453px">
+            <img src="assets/lumiere/img-5344.png" alt="Building the installation">
+          </div>
+          <div class="slide-cell" style="left:380px;top:0;width:344px;height:786px">
+            <img src="assets/lumiere/screenshot-545546.png" alt="Installation setup">
+          </div>
+          <div class="slide-cell" style="left:760px;top:0;width:725px;height:786px">
+            <img src="assets/lumiere/screenshot-545552.png" alt="Installation setup">
+          </div>
+          <div class="slide-cell" style="left:380px;top:803px;width:344px;height:267px">
+            <img src="assets/lumiere/img-5327.png" alt="Build detail">
+          </div>
+          <div class="slide-cell" style="left:0;top:489px;width:345px;height:460px">
+            <img src="assets/lumiere/img-2481.png" alt="Build process">
+          </div>
+          <p class="slide-text t-switzer-light" style="left:760px;top:992px;width:724px">
+            As our central hero piece, I built the water tank from pallets to both take it easy on the environment and our wallets. Once the tank was built, I wired up a LED strip to an ESP32 board so that we could control it with mediapipe.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="production-counter mt-xs">
+        <p class="counter-text t-switzer-light" id="page_indicator_1">1/2</p>
+      </div>
+
+    </section>
+
+    <div class="section-divider mt-xl"></div>
+
+    <!-- ── PRODUCTION BREAKDOWN ── -->
+    <section>
+
+      <div class="section-label-row mt-2xl">
+        <p class="section-label t-mono-light">[Production breakdown]</p>
+      </div>
+
+      <div class="content-slider mt-md" id="production-slider">
+
+        <!-- Group 1: renders + rag setup -->
+        <div id="lum_prod_page_1" class="slider-page" style="height:867px">
+          <div class="slide-cell" style="left:0;top:0;width:724px;height:407px">
+            <img src="assets/lumiere/production-1.png" alt="Production render">
+          </div>
+          <div class="slide-cell" style="left:760px;top:0;width:724px;height:407px">
+            <img src="assets/lumiere/Lily%20final%20rig0182.png" alt="Lily rig render">
+          </div>
+          <div class="slide-cell" style="left:0;top:439px;width:344px;height:394px">
+            <img src="assets/lumiere/rag-setup.png" alt="Rag setup">
+          </div>
+          <div class="slide-cell" style="left:380px;top:442px;width:1103px;height:425px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/Final_Panorama.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Group 2: photography -->
+        <div id="lum_prod_page_2" class="slider-page" style="height:965px;display:none">
+          <div class="slide-cell" style="left:0;top:0;width:344px;height:420px">
+            <img src="assets/lumiere/img-9953.png" alt="Production photography">
+          </div>
+          <div class="slide-cell" style="left:380px;top:0;width:724px;height:965px">
+            <img src="assets/lumiere/img-0007.png" alt="Production photography">
+          </div>
+          <div class="slide-cell" style="left:1140px;top:0;width:344px;height:194px">
+            <img src="assets/lumiere/sequence-thumb.png" alt="Sequence thumbnail">
+          </div>
+          <div class="slide-cell" style="left:1140px;top:194px;width:344px;height:194px;opacity:0.28">
+            <img src="assets/lumiere/full-sequence-3.png" alt="Full sequence">
+          </div>
+          <div class="slide-cell" style="left:0;top:443px;width:344px;height:193px">
+            <img src="assets/lumiere/production-3.png" alt="Production footage">
+          </div>
+          <div class="slide-cell" style="left:1140px;top:230px;width:344px;height:612px">
+            <video autoplay muted loop playsinline>
+              <source src="assets/lumiere/0001-0091.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="production-counter mt-xs">
+        <p class="counter-text t-switzer-light" id="page_indicator_2">1/2</p>
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="section-divider mt-2xl"></div>
+
+    <footer class="footer mt-xl">
+
+      <p class="footer-headline t-switzer-medium">Coffee? Chat?</p>
+
+      <div class="footer-cols mt-2xl">
+        <div class="footer-left">
+          <a class="footer-contact t-mono-regular" href="mailto:sammshinny@gmail.com">Sammshinny@gmail.com</a>
+          <a class="footer-contact t-mono-regular" href="https://www.instagram.com/sam_sam_sam_shin/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-contact t-mono-regular" href="https://www.linkedin.com/in/sam-shin-731513104/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+        <div class="footer-right">
+          <p class="footer-contact t-mono-regular">Auckland, New Zealand</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row mt-2xl mb-md">
+        <div class="footer-credits t-mono-light">
+          <p>DESIGNED BY SAM SHIN</p>
+          <p>@2026_ALL_RIGHTS_RESERVED</p>
+        </div>
+        <a class="back-to-top" href="#">[Back to top ↑]</a>
+      </div>
+
+    </footer>
+
+    <div class="section-divider mb-md"></div>
+
+  </main>
+
+  <div id="custom-cursor" class="custom-cursor">CLICK</div>
+
+<script>
+(function () {
+
+  /* ── ContentSlider factory ── */
+  function ContentSlider(sliderId, pageIds, indicatorId) {
+    var slider    = document.getElementById(sliderId);
+    var indicator = document.getElementById(indicatorId);
+    var pages     = pageIds.map(function (id) { return document.getElementById(id); });
+    var total     = pages.length;
+    if (!slider) return;
+
+    var maxH = Math.max.apply(null, pages.map(function (p) {
+      return parseInt(p.style.height) || 0;
+    }));
+    slider.style.position = 'relative';
+    slider.style.height   = maxH + 'px';
+
+    pages.forEach(function (p) {
+      p.style.position      = 'absolute';
+      p.style.top           = '0';
+      p.style.left          = '0';
+      p.style.width         = '100%';
+      p.style.display       = 'block';
+      p.style.visibility    = 'hidden';
+      p.style.pointerEvents = 'none';
+    });
+
+    var index = 1;
+
+    function render() {
+      var ep = total === 2 ? (index % 2 === 1 ? 1 : 2) : ((index - 1) % total) + 1;
+      pages.forEach(function (p, i) {
+        var active = (i + 1 === ep);
+        p.style.visibility    = active ? 'visible' : 'hidden';
+        p.style.pointerEvents = active ? 'auto'    : 'none';
+      });
+      if (indicator) indicator.textContent = ep + '/' + total;
+    }
+
+    slider.addEventListener('click', function () { index++; render(); });
+    render();
+  }
+
+  ContentSlider('exhibition-slider',  ['exh_page_1', 'exh_page_2'],          'page_indicator_0');
+  ContentSlider('experiments-slider', ['lum_exp_page_1', 'lum_exp_page_2'],   'page_indicator_1');
+  ContentSlider('production-slider',  ['lum_prod_page_1', 'lum_prod_page_2'], 'page_indicator_2');
+
+  /* ── Grid: start inner column lines below the metadata strip ── */
+  (function () {
+    var meta = document.querySelector('.meta-section');
+    if (!meta) return;
+    var colTop = meta.getBoundingClientRect().bottom + window.scrollY;
+    document.querySelectorAll('.grid-col').forEach(function (el) {
+      el.style.top = colTop + 'px';
+    });
+  }());
+
+  /* ── Custom video player ── */
+  (function () {
+    var media      = document.getElementById('hero-media');
+    var video      = document.getElementById('hero-video');
+    var pp         = document.getElementById('vid-pp');
+    var scrub      = document.getElementById('vid-scrub');
+    var fill       = document.getElementById('vid-scrub-fill');
+    var fs         = document.getElementById('vid-fs');
+    var centerPlay = document.getElementById('vid-center-play');
+    if (!video || !media) return;
+
+    function setPlaying(p) {
+      pp.setAttribute('data-state', p ? 'playing' : 'paused');
+      media.classList.toggle('vid-playing', p);
+    }
+    function togglePlay() { video.paused ? video.play() : video.pause(); }
+
+    video.addEventListener('click',      function (e) { e.stopPropagation(); togglePlay(); });
+    pp.addEventListener('click',         function (e) { e.stopPropagation(); togglePlay(); });
+    centerPlay.addEventListener('click', function (e) { e.stopPropagation(); togglePlay(); });
+    video.addEventListener('play',   function () { setPlaying(true);  });
+    video.addEventListener('pause',  function () { setPlaying(false); });
+    video.addEventListener('ended',  function () { setPlaying(false); video.load(); });
+    video.addEventListener('timeupdate', function () {
+      if (video.duration) fill.style.width = (video.currentTime / video.duration * 100) + '%';
+    });
+
+    var dragging = false;
+    function scrubTo(e) {
+      var r = scrub.getBoundingClientRect();
+      video.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (video.duration || 0);
+    }
+    scrub.addEventListener('mousedown', function (e) { e.stopPropagation(); dragging = true; scrubTo(e); });
+    document.addEventListener('mousemove', function (e) { if (dragging) scrubTo(e); });
+    document.addEventListener('mouseup',   function ()  { dragging = false; });
+    fs.addEventListener('click', function (e) {
+      e.stopPropagation();
+      (video.requestFullscreen || video.webkitRequestFullscreen || video.mozRequestFullScreen).call(video);
+    });
+  }());
+
+  /* ── Custom cursor (appears on hover over sliders) ── */
+  (function () {
+    var cursor = document.getElementById('custom-cursor');
+    if (!cursor) return;
+    document.addEventListener('mousemove', function (e) {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('.content-slider').forEach(function (s) {
+      s.addEventListener('mouseenter', function () { cursor.classList.add('is-visible'); });
+      s.addEventListener('mouseleave', function () { cursor.classList.remove('is-visible'); });
+    });
+  }());
+
+  /* ── Back to top ── */
+  var btt = document.querySelector('.back-to-top');
+  if (btt) btt.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+}());
+</script>
+</body>
+</html>

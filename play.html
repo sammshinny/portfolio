@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play — Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <div class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="play.html">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <main class="page-wrap">
+
+    <!-- ── BACKGROUND GRID LINES ── -->
+    <div class="grid-overlay" aria-hidden="true">
+      <div class="grid-rail grid-rail--left"></div>
+      <div class="grid-rail grid-rail--right"></div>
+      <div class="grid-col grid-col--1"></div>
+      <div class="grid-col grid-col--2"></div>
+      <div class="grid-col grid-col--3"></div>
+    </div>
+
+    <!-- ── PHOTO COLLAGE ──
+         Coordinates: Figma left values are relative to 1920px canvas.
+         Figma top values are (original y − 78px header).
+    ── -->
+    <section class="play-section">
+
+      <!-- IMG_2376: circuit board / electronics setup -->
+      <div class="play-photo" style="left:calc(10% + 26px);top:19px;width:360px;height:480px">
+        <img src="assets/play/img-2376.png" alt="Electronics build">
+      </div>
+
+      <!-- Media: Ableton / controller setup (video fill — add image manually) -->
+      <div class="play-photo" style="left:calc(30% + 22px);top:19px;width:380px;height:676px;background:#d8d8d8"></div>
+
+      <!-- Pingu: 3D rendered character -->
+      <div class="play-photo" style="left:calc(50% + 145px);top:19px;width:770px;height:433px">
+        <img src="assets/play/pingu.png" alt="Pingu 3D render">
+      </div>
+
+      <!-- Coha ring: silver ring render -->
+      <div class="play-photo" style="left:calc(70% + 26px);top:476px;width:505px;height:284px">
+        <img src="assets/play/coha-ring.png" alt="Coha ring 3D render">
+      </div>
+
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <div class="section-divider">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer mt-xl">
+
+      <p class="footer-headline t-switzer-medium">Coffee? Chat?</p>
+
+      <div class="footer-cols mt-2xl">
+        <div class="footer-left">
+          <a class="footer-contact t-mono-regular" href="mailto:sammshinny@gmail.com">Sammshinny@gmail.com</a>
+          <a class="footer-contact t-mono-regular" href="https://www.instagram.com/sam_sam_sam_shin/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-contact t-mono-regular" href="https://www.linkedin.com/in/sam-shin-731513104/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+        <div class="footer-right">
+          <p class="footer-contact t-mono-regular">Auckland, New Zealand</p>
+        </div>
+      </div>
+
+      <div class="footer-btt mt-2xl">
+        <a class="back-to-top t-mono-light" href="#">[Back to top ↑]</a>
+      </div>
+
+    </footer>
+
+    <div class="section-divider"></div>
+
+    <div class="footer-credits t-mono-light">
+      <p>DESIGNED BY SAM SHIN</p>
+      <p>@2026_ALL_RIGHTS_RESERVED</p>
+    </div>
+
+  </main>
+
+<script>
+  var btt = document.querySelector('.back-to-top');
+  if (btt) btt.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
