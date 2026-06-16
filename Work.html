@@ -14,7 +14,7 @@
 <body>
 
   <!-- ── HEADER ── -->
-  <div class="header">
+  <header class="header">
     <a href="index.html" class="site-name">Sam Shin</a>
     <nav class="header-nav">
       <a href="index.html">Home</a>
@@ -22,18 +22,13 @@
       <a href="play.html">Play</a>
       <a href="about.html">About</a>
     </nav>
-  </div>
+  </header>
 
-  <main class="page-wrap">
-
-    <!-- ── BACKGROUND GRID LINES ── -->
-    <div class="grid-overlay" aria-hidden="true">
-      <div class="grid-rail grid-rail--left"></div>
-      <div class="grid-rail grid-rail--right"></div>
-      <div class="grid-col grid-col--1"></div>
-      <div class="grid-col grid-col--2"></div>
-      <div class="grid-col grid-col--3"></div>
-    </div>
+  <!-- ── MAIN — 4-COLUMN GRID ──
+       margin: 0 200px creates the outer rails.
+       Grid lines via background-image (no overlay div).
+  ── -->
+  <main>
 
     <!-- ── HERO BOX ── -->
     <div class="cs-header-box">
@@ -73,14 +68,14 @@
 
       <!-- Row 2 -->
       <div class="work-thumb-row mt-xl">
-        <div class="work-thumb">
+        <a class="work-thumb" href="headspace.html">
           <img src="assets/landingpage/headspace_thumbnail.png" alt="Sleep by Headspace — App promo/explainer video">
           <video src="assets/landingpage/Headspace_Thumbnail.mp4" muted loop playsinline></video>
-        </div>
-        <div class="work-thumb">
+        </a>
+        <a href="studio925.html" class="work-thumb">
           <img src="assets/landingpage/studio-925_thumbnail.png" alt="Studio 925 — System Showcase">
           <video src="assets/landingpage/925_Thumbnail.mp4" muted loop playsinline></video>
-        </div>
+        </a>
       </div>
 
       <div class="work-label-row mt-sm">

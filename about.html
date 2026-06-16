@@ -14,7 +14,7 @@
 <body>
 
   <!-- ── HEADER ── -->
-  <div class="header">
+  <header class="header">
     <a href="index.html" class="site-name">Sam Shin</a>
     <nav class="header-nav">
       <a href="index.html">Home</a>
@@ -22,97 +22,94 @@
       <a href="play.html">Play</a>
       <a href="about.html">About</a>
     </nav>
-  </div>
+  </header>
 
-  <main class="page-wrap">
-
-    <!-- ── BACKGROUND GRID LINES ── -->
-    <div class="grid-overlay" aria-hidden="true">
-      <div class="grid-rail grid-rail--left"></div>
-      <div class="grid-rail grid-rail--right"></div>
-      <div class="grid-col grid-col--1"></div>
-      <div class="grid-col grid-col--2"></div>
-      <div class="grid-col grid-col--3"></div>
-    </div>
+  <!-- ── MAIN — 4-COLUMN GRID ──
+       margin: 0 200px creates the outer rails.
+       Grid lines via background-image (no overlay div).
+  ── -->
+  <main>
 
     <!-- ── ABOUT CONTENT ──
-         Photos are absolutely positioned within this section.
-         All top values = original Figma y − 78 (header height).
+         All positions converted from 1920px Figma canvas to
+         content-area space (1520px = viewport − 400px rails).
+         left = Figma left − 200px rail.
+         top  = Figma top  − 78px header (unchanged).
     ── -->
     <section class="about-section">
 
-      <!-- Photo collage — left half -->
+      <!-- Photo collage — left half (cols 1–2) -->
 
-      <!-- Guitar: originally top:202 → 124 -->
-      <div class="about-photo" style="left:580px;top:124px;width:210px;height:242px;overflow:hidden;z-index:1">
+      <!-- Guitar: Figma left=580 → 380 -->
+      <div class="about-photo" style="left:380px;top:124px;width:210px;height:242px;overflow:hidden;z-index:1">
         <img src="assets/about/guitar.png" alt="Guitar"
              style="position:absolute;width:100.08%;height:129.86%;top:0;left:-0.04%">
       </div>
 
-      <!-- Snowboard: originally top:244 → 166 -->
-      <div class="about-photo" style="left:242px;top:166px;width:167px;height:275px;overflow:hidden">
+      <!-- Snowboard: Figma left=242 → 42 -->
+      <div class="about-photo" style="left:42px;top:166px;width:167px;height:275px;overflow:hidden">
         <img src="assets/about/snowboard.png" alt="Snowboard"
              style="position:absolute;width:100%;height:131.04%;top:-11.08%;left:0">
       </div>
 
-      <!-- Alpaca: originally top:272 → 194 -->
-      <div class="about-photo" style="left:439px;top:194px;width:331px;height:221px">
+      <!-- Alpaca: Figma left=439 → 239 -->
+      <div class="about-photo" style="left:239px;top:194px;width:331px;height:221px">
         <img src="assets/about/alpaca.png" alt="Alpaca">
       </div>
 
-      <!-- Fish: originally top:234 → 156 -->
-      <div class="about-photo" style="left:805px;top:156px;width:166px;height:221px">
+      <!-- Fish: Figma left=805 → 605 -->
+      <div class="about-photo" style="left:605px;top:156px;width:166px;height:221px">
         <img src="assets/about/fish.png" alt="Fish">
       </div>
 
-      <!-- Camera4: originally top:540 → 462 -->
-      <div class="about-photo" style="left:269px;top:462px;width:226px;height:152px">
+      <!-- Camera4: Figma left=269 → 69 -->
+      <div class="about-photo" style="left:69px;top:462px;width:226px;height:152px">
         <img src="assets/about/camera4.png" alt="Camera">
       </div>
 
-      <!-- Camera1: originally top:513 → 435 -->
-      <div class="about-photo" style="left:469px;top:435px;width:229px;height:129px">
+      <!-- Camera1: Figma left=469 → 269 -->
+      <div class="about-photo" style="left:269px;top:435px;width:229px;height:129px">
         <img src="assets/about/camera1.png" alt="Camera">
       </div>
 
-      <!-- Camera3: originally top:513 → 435 -->
-      <div class="about-photo" style="left:737px;top:435px;width:135px;height:89px">
+      <!-- Camera3: Figma left=737 → 537 -->
+      <div class="about-photo" style="left:537px;top:435px;width:135px;height:89px">
         <img src="assets/about/camera3.png" alt="Camera">
       </div>
 
-      <!-- Kingfish: originally top:663 → 585 -->
-      <div class="about-photo" style="left:523px;top:585px;width:162px;height:205px">
+      <!-- Kingfish: Figma left=523 → 323 -->
+      <div class="about-photo" style="left:323px;top:585px;width:162px;height:205px">
         <img src="assets/about/kingfish.png" alt="Kingfish">
       </div>
 
-      <!-- Spearfishing: originally top:672 → 594 -->
-      <div class="about-photo" style="left:218px;top:594px;width:256px;height:341px">
+      <!-- Spearfishing: Figma left=218 → 18 -->
+      <div class="about-photo" style="left:18px;top:594px;width:256px;height:341px">
         <img src="assets/about/spearfishing.png" alt="Spearfishing">
       </div>
 
-      <!-- Tennis: originally top:616 → 538 -->
-      <div class="about-photo" style="left:716px;top:538px;width:198px;height:217px;overflow:hidden">
+      <!-- Tennis: Figma left=716 → 516 -->
+      <div class="about-photo" style="left:516px;top:538px;width:198px;height:217px;overflow:hidden">
         <img src="assets/about/tennis.png" alt="Tennis"
              style="position:absolute;width:100%;height:121.45%;top:-21.38%;left:0">
       </div>
 
-      <!-- Bori: originally top:789 → 711 -->
-      <div class="about-photo" style="left:664px;top:711px;width:160px;height:213px">
+      <!-- Bori: Figma left=664 → 464 -->
+      <div class="about-photo" style="left:464px;top:711px;width:160px;height:213px">
         <img src="assets/about/bori.png" alt="Bori">
       </div>
 
-      <!-- Camera2: originally top:934 → 856 -->
-      <div class="about-photo" style="left:793px;top:856px;width:121px;height:81px">
+      <!-- Camera2: Figma left=793 → 593 -->
+      <div class="about-photo" style="left:593px;top:856px;width:121px;height:81px">
         <img src="assets/about/camera2.png" alt="Camera">
       </div>
 
-      <!-- Text — right half -->
+      <!-- Text — right half (cols 3–4) -->
 
-      <!-- "Sam Shin": originally top:477 → 399 -->
-      <p class="about-name" style="left:1048px;top:399px">Sam Shin</p>
+      <!-- "Sam Shin": Figma left=1048 → 848 -->
+      <p class="about-name" style="left:848px;top:399px">Sam Shin</p>
 
-      <!-- Bio: originally top:668 → 590 -->
-      <div class="about-desc t-mono-regular" style="left:1054px;top:590px;width:552px">
+      <!-- Bio: Figma left=1054 → 854 -->
+      <div class="about-desc t-mono-regular" style="left:854px;top:590px;width:552px">
         <p>Outside of design, I spend most of my time with my cameras, guitars and in the great outdoors. I love to dive deep into my hobbies.</p>
         <p>I'm a serial tinkerer — be it a camera, a speargun or a styleframe, I tend to obsess over it until it looks and feels just right.</p>
       </div>
@@ -146,10 +143,8 @@
 
     </footer>
 
-    <!-- Bottom divider line -->
     <div class="section-divider"></div>
 
-    <!-- Credits sit below the bottom line, matching Figma -->
     <div class="footer-credits t-mono-light">
       <p>DESIGNED BY SAM SHIN</p>
       <p>@2026_ALL_RIGHTS_RESERVED</p>

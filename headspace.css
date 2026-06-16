@@ -1,0 +1,601 @@
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Base ── */
+html, body { background: #f6f6f6; color: #000; }
+
+/* ─────────────────────────
+   TYPOGRAPHY HELPERS
+───────────────────────── */
+.t-switzer-medium   { font-family: 'Switzer', sans-serif; font-weight: 500; }
+.t-switzer-semibold { font-family: 'Switzer', sans-serif; font-weight: 600; }
+.t-switzer-light    { font-family: 'Switzer', sans-serif; font-weight: 300; }
+.t-switzer-regular  { font-family: 'Switzer', sans-serif; font-weight: 400; }
+.t-mono-regular     { font-family: 'Geist Mono', monospace; font-weight: 400; }
+.t-mono-light       { font-family: 'Geist Mono', monospace; font-weight: 300; }
+.t-jetbrains        { font-family: 'JetBrains Mono', monospace; font-weight: 400; }
+
+/* ─────────────────────────
+   SITE HEADER (sticky nav)
+───────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 78px;
+  background: #f6f6f6;
+  border-bottom: 0.5px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 200px matches main's outer rail; 15px vertical per Figma annotation */
+  padding: 15px 218px;
+}
+
+.site-name {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: -2.16px;
+  color: #000;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.header-nav { display: flex; gap: 51px; align-items: center; }
+
+.header-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1.6px;
+  color: #000;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.header-nav a:hover { text-decoration: underline; }
+
+/* ══════════════════════════════════════════
+   MASTER 4-COLUMN GRID
+   padding: 0 200px creates the outer rails.
+   Each column = (1920 - 400) / 4 = 380px.
+   Column starts (from viewport): 200, 580, 960, 1340, 1720.
+   Content text indent = +18px per column start.
+══════════════════════════════════════════ */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 200px;
+
+
+  /* --inner-line-start is set by JS to the bottom of .meta-strip
+     so the three faint inner dividers only appear below that point,
+     matching Figma annotation: vectors 68/70/71 start at bottom of Movie Box. */
+  --inner-line-start: 1290px; /* fallback: (Figma y=1367 − header 78px) + 1px divider */
+
+  background-image:
+    /* Outer left rail — full height from top of main */
+    linear-gradient(to right, rgba(0, 0, 0, 0.8) 1px, transparent 1px),
+    /* Outer right rail — full height from top of main */
+    linear-gradient(to left,  rgba(0, 0, 0, 0.8) 1px, transparent 1px),
+    /* Inner 3 dividers — start at bottom of meta-strip (set by JS) */
+    linear-gradient(to right,
+      transparent 25%,  rgba(0, 0, 0, 0.15) 25%,  rgba(0, 0, 0, 0.15) calc(25% + 1px),  transparent calc(25% + 1px),
+      transparent 50%,  rgba(0, 0, 0, 0.15) 50%,  rgba(0, 0, 0, 0.15) calc(50% + 1px),  transparent calc(50% + 1px),
+      transparent 75%,  rgba(0, 0, 0, 0.15) 75%,  rgba(0, 0, 0, 0.15) calc(75% + 1px),  transparent calc(75% + 1px)
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% calc(100% - var(--inner-line-start));
+  background-position:
+    left top,
+    right top,
+    left var(--inner-line-start);
+  background-repeat:   no-repeat;
+  background-origin:   content-box;
+  background-clip:     content-box;
+}
+
+/* ─────────────────────────
+   CASE STUDY HEADER BOX
+   Subgrid: title in cols 1–2, desc in col 4.
+   Box border left/right = outer rail lines.
+───────────────────────── */
+.cs-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: end;
+  background: #f6f6f6; /* masks main grid lines inside the box */
+  border-left:   0.5px solid #000;
+  border-right:  0.5px solid #000;
+  border-bottom: 0.5px solid #000;
+  padding-top:    148px;
+  padding-bottom: 18px;
+  position: relative; /* for corner-cross abs children */
+}
+
+.cs-title-col {
+  grid-column: 1 / 3; /* spans cols 1 and 2 */
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.cs-date-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.cs-title {
+  font-family: 'Switzer', sans-serif;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 1;
+  letter-spacing: -3.84px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* col 4 only — description text */
+.cs-desc {
+  grid-column: 4;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: normal;
+  color: #000;
+  align-self: end;
+  padding-bottom: 2px;
+}
+
+.corner-cross {
+  position: absolute;
+  bottom: -5.5px;
+  width: 11px; height: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+}
+.corner-cross::before  { content: '+'; }
+.corner-cross--left    { left:  -5.5px; }
+.corner-cross--right   { right: -5.5px; }
+
+/* ─────────────────────────
+   HERO VIDEO
+   grid-column 1/-1 = full content width.
+   padding 18px sides = inset to 218px / 1702px
+   giving the 1484px wide video area.
+───────────────────────── */
+.hero-section {
+  grid-column: 1 / -1;
+  padding: 18px 18px 0;
+}
+
+.hero-media {
+  width: 100%;
+  aspect-ratio: 1484 / 835;
+  background: #d9d9d9;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Video controls ── */
+.vid-center-play {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  background: rgba(246, 246, 246, 0.92);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+  transition: background 0.15s;
+}
+.vid-center-play::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-35%, -50%);
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 24px;
+  border-color: transparent transparent transparent #000;
+}
+.vid-center-play:hover { background: #fff; }
+.hero-media.vid-playing .vid-center-play { opacity: 0; pointer-events: none; }
+
+.vid-controls {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.54));
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+.hero-media:hover .vid-controls { opacity: 1; pointer-events: auto; }
+
+.vid-pp {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: none; border: none;
+  cursor: pointer;
+  position: relative;
+}
+.vid-pp[data-state="paused"]::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #fff;
+}
+.vid-pp[data-state="playing"]::before {
+  content: '';
+  position: absolute;
+  left: 5px; top: 50%; transform: translateY(-50%);
+  width: 4px; height: 16px;
+  background: #fff;
+}
+.vid-pp[data-state="playing"]::after {
+  content: '';
+  position: absolute;
+  right: 5px; top: 50%; transform: translateY(-50%);
+  width: 4px; height: 16px;
+  background: #fff; border: none;
+}
+
+.vid-scrub {
+  flex: 1;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.vid-scrub::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 1px;
+}
+.vid-scrub-fill {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  height: 2px; width: 0;
+  background: #fff;
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.vid-fs {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  background: none; border: none;
+  cursor: pointer;
+  position: relative;
+}
+.vid-fs::before {
+  content: '';
+  position: absolute;
+  top: 1px; left: 1px;
+  width: 9px; height: 9px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+.vid-fs::after {
+  content: '';
+  position: absolute;
+  bottom: 1px; right: 1px;
+  width: 9px; height: 9px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+/* ─────────────────────────
+   SECTION DIVIDERS (horizontal rules)
+   grid-column 1/-1 = spans full content width,
+   no margin needed — the grid padding provides it.
+───────────────────────── */
+.section-divider {
+  grid-column: 1 / -1;
+  height: 0.5px;
+  background: #000;
+  position: relative;
+}
+
+.divider-mark {
+  position: absolute;
+  top: -5.5px;
+  width: 11px; height: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+}
+.divider-mark::before  { content: '+'; }
+.divider-mark--left    { left:  -5.5px; }
+.divider-mark--right   { right: -5.5px; }
+
+/* ─────────────────────────
+   METADATA STRIP (Contextbox)
+   Subgrid maps each meta-col to exactly one
+   grid column. Column borders = grid line marks.
+───────────────────────── */
+.meta-strip {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  padding-top: 15px;
+  padding-bottom: 19px;
+  border-left:  0.5px solid #000;
+  border-right: 0.5px solid #000;
+  position: relative;
+  z-index: 2;
+}
+
+.meta-strip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f6f6f6;
+  z-index: -1;
+}
+
+.meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 18px;
+}
+
+
+.meta-label {
+  font-size: 16px;
+  line-height: normal;
+  color: #636363;
+  white-space: nowrap;
+}
+
+.meta-value {
+  font-size: 16px;
+  line-height: normal;
+  color: #000;
+}
+
+/* ─────────────────────────
+   SECTION LABELS
+   col 1 only — label sits flush with grid col start
+───────────────────────── */
+.section-label {
+  grid-column: 1;
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────
+   STYLEFRAMES — 2×2 GALLERY
+   padding 0 18px = same 18px inset as hero.
+───────────────────────── */
+.gallery-2col {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  padding: 0 18px;
+}
+
+.gallery-img {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 724 / 407;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Full-width styleframe / video */
+.gallery-full {
+  grid-column: 1 / -1;
+  padding: 0 18px;
+  overflow: hidden;
+  aspect-ratio: 1920 / 1080;
+}
+
+.gallery-full img,
+.gallery-full video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─────────────────────────
+   BODY TEXT
+   cols 3–4 with 18px indent each side.
+   Width = 760px − 36px = 724px (matches Figma).
+───────────────────────── */
+.body-text-col {
+  grid-column: 3 / -1;
+  padding: 0 18px;
+}
+
+.body-text {
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+}
+
+/* ─────────────────────────
+   CAROUSEL — 3+2 GRID
+   3-col nested grid wraps naturally: 3 in row 1,
+   2 in row 2 (col 3 empty).
+───────────────────────── */
+.carousel-3col {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+  padding: 0 18px;
+}
+
+.carousel-cell {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #e8e8e8;
+}
+
+.carousel-cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ─────────────────────────
+   FOOTER (inside main grid — same as Work / About)
+───────────────────────── */
+.footer {
+  grid-column: 1 / -1;
+  padding: 0 18px;
+}
+
+.footer-headline {
+  font-size: 96px;
+  letter-spacing: -2.88px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 36px;
+}
+
+.footer-left { display: flex; flex-direction: column; }
+
+.footer-contact {
+  display: block;
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.footer-contact + .footer-contact { margin-top: 45px; }
+.footer-contact:hover { text-decoration: underline; }
+
+.footer-btt {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-credits {
+  grid-column: 1 / -1;
+  padding: 13px 0 40px 18px;
+  font-size: 12px;
+  line-height: normal;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 16.5px;
+}
+
+.back-to-top {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.back-to-top:hover { text-decoration: underline; }
+
+
+/* ─────────────────────────
+   CUSTOM CURSOR
+───────────────────────── */
+.custom-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Geist Mono', monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.12s;
+  user-select: none;
+}
+
+/* ─────────────────────────
+   SPACING TOKENS
+───────────────────────── */
+.mt-18  { margin-top: 18px; }
+.mt-sm  { margin-top: 24px; }
+.mt-md  { margin-top: 40px; }
+.mt-lg  { margin-top: 56px; }
+.mt-xl  { margin-top: 80px; }
+.mt-2xl { margin-top: 120px; }
+.mb-md  { margin-bottom: 40px; }

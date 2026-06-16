@@ -14,7 +14,7 @@
 <body>
 
   <!-- ── HEADER ── -->
-  <div class="header">
+  <header class="header">
     <a href="index.html" class="site-name">Sam Shin</a>
     <nav class="header-nav">
       <a href="index.html">Home</a>
@@ -22,18 +22,13 @@
       <a href="play.html">Play</a>
       <a href="about.html">About</a>
     </nav>
-  </div>
+  </header>
 
-  <main class="page-wrap">
-
-    <!-- ── BACKGROUND GRID LINES ── -->
-    <div class="grid-overlay" aria-hidden="true">
-      <div class="grid-rail grid-rail--left"></div>
-      <div class="grid-rail grid-rail--right"></div>
-      <div class="grid-col grid-col--1"></div>
-      <div class="grid-col grid-col--2"></div>
-      <div class="grid-col grid-col--3"></div>
-    </div>
+  <!-- ── MAIN — 4-COLUMN GRID ──
+       margin: 0 200px creates the outer rails.
+       Grid lines via background-image (no overlay div).
+  ── -->
+  <main>
 
     <!-- ── CASE STUDY HEADER BOX ── -->
     <div class="cs-header-box">
@@ -421,16 +416,6 @@
 
   ContentSlider('experiments-slider',  ['content_page_1', 'content_page_2'], 'page_indicator_1');
   ContentSlider('production-slider',   ['prod_page_1', 'prod_page_2', 'prod_page_3'], 'page_indicator_2');
-
-  /* ── Grid: start inner column lines below the metadata strip ── */
-  (function () {
-    var meta = document.querySelector('.meta-section');
-    if (!meta) return;
-    var colTop = meta.getBoundingClientRect().bottom + window.scrollY;
-    document.querySelectorAll('.grid-col').forEach(function (el) {
-      el.style.top = colTop + 'px';
-    });
-  }());
 
   /* ── Custom video player ── */
   (function () {

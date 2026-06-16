@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio 925 — Case Study | Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="studio925.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       STICKY SITE HEADER (outside main grid)
+  ═══════════════════════════════════════ -->
+  <header class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="play.html">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       MAIN — 4-COLUMN GRID
+  ═══════════════════════════════════════ -->
+  <main>
+
+    <!-- ── CASE STUDY HEADER BOX ── -->
+    <div class="cs-header">
+      <div class="cs-title-col">
+        <div class="cs-date-row">
+          <span class="t-mono-light">[CASE STUDY]</span>
+          <span class="t-mono-regular">2025</span>
+        </div>
+        <p class="cs-title">STUDIO-925</p>
+      </div>
+      <!-- col 3 intentionally empty -->
+      <p class="cs-desc t-mono-light">A contemporary jewellery brand exploring the intersection of digital and traditional craftsmanship.</p>
+      <div class="corner-cross corner-cross--left"  aria-hidden="true"></div>
+      <div class="corner-cross corner-cross--right" aria-hidden="true"></div>
+    </div>
+
+    <!-- ── HERO VIDEO ── -->
+    <section class="hero-section mt-18">
+      <div class="hero-media" id="hero-media">
+        <video id="hero-video">
+          <source src="assets/studio925/studio925finalsound.mp4" type="video/mp4">
+        </video>
+        <button class="vid-center-play" id="vid-center-play" aria-label="Play"></button>
+        <div class="vid-controls" id="vid-controls">
+          <button class="vid-pp" id="vid-pp" data-state="paused" aria-label="Play/Pause"></button>
+          <div class="vid-scrub" id="vid-scrub">
+            <div class="vid-scrub-fill" id="vid-scrub-fill"></div>
+          </div>
+          <button class="vid-fs" id="vid-fs" aria-label="Fullscreen"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mt-18" aria-hidden="true"></div>
+
+    <!-- ── METADATA STRIP ── -->
+    <div class="meta-strip">
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[CONTEXT]</p>
+        <p class="meta-value t-mono-light">Academic project</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[TIMELINE]</p>
+        <p class="meta-value t-mono-light">8 weeks</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[ROLE]</p>
+        <p class="meta-value t-mono-light">Design | Fabrication | Animation</p>
+      </div>
+      <div class="meta-col">
+        <p class="meta-label t-mono-regular">[TOOLS]</p>
+        <p class="meta-value t-mono-light">Adobe Pr Ae | Blender | BambuStudio</p>
+      </div>
+    </div>
+
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- ── TALK CUSTOM — full-width image, no section label ── -->
+    <div class="gallery-wide mt-xl">
+      <img src="assets/studio925/talkcustom.png" alt="Talk Custom — Studio 925 ordering interface">
+    </div>
+
+    <!-- ── [Problem identification] — cols 3–4 ── -->
+    <p class="section-label-right t-mono-light mt-md">[Problem identification]</p>
+
+    <div class="body-text-col mt-sm">
+      <p class="t-switzer-light body-text">I was interested in why custom jewellery feels inaccessible to the younger demographic. I found that custom pieces required a high level of design confidence from the customer, knowledge on the process and a large commitment while mainstream alternatives offered little more than simple engraving. Studio-925 offers a middle ground via a modular customisation system that balances a meaningful customisation experience with a low barrier to entry.</p>
+    </div>
+
+    <!-- ── SECTION: FINALISED STYLEFRAMES ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <p class="section-label t-mono-light mt-xl">[Finalised Styleframes]</p>
+
+    <div class="gallery-2col mt-md">
+      <div class="gallery-img"><img src="assets/studio925/1.png" alt="Styleframe 1"></div>
+      <div class="gallery-img"><img src="assets/studio925/8.png" alt="Styleframe 8"></div>
+    </div>
+
+    <div class="gallery-2col mt-lg">
+      <div class="gallery-img"><img src="assets/studio925/5.png" alt="Styleframe 5"></div>
+      <div class="gallery-img"><img src="assets/studio925/6.png" alt="Styleframe 6"></div>
+    </div>
+
+    <div class="gallery-full mt-lg">
+      <img src="assets/studio925/7.png" alt="Styleframe 7">
+    </div>
+
+    <div class="body-text-col mt-xl">
+      <p class="t-switzer-light body-text">As a showcase of the customisation system behind Studio-925, the visual direction was designed to visualise the underlying system as much as possible. I achieved this through stylised wireframe renders, UI animations and a systematic, modern tech inspired blob tracking visual style.</p>
+    </div>
+
+    <!-- ── SECTION: PHYSICAL PRODUCTS WIP — 2-slide click-to-advance ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <p class="section-label t-mono-light mt-xl">[PHYSICAL PRODUCTS WIP]</p>
+
+    <div class="content-slider mt-md" id="slider-physical" style="aspect-ratio: 1484/1082">
+      <div class="slider-track" id="slider-physical-track">
+
+        <!-- Slide 1: Vine ring iteration -->
+        <div class="slide-cell">
+          <div class="slide-cols">
+            <div class="slide-col">
+              <div class="slide-img"><img src="assets/studio925/wireframevine.png" alt="Vine ring wireframe"></div>
+              <div class="slide-img"><img src="assets/studio925/vineringprint.png"  alt="Vine ring print file"></div>
+            </div>
+            <div class="slide-col">
+              <div class="slide-img"><img src="assets/studio925/vineringrender.png"   alt="Vine ring render"></div>
+              <div class="slide-pair">
+                <div class="slide-img"><img src="assets/studio925/vineringprinted.png" alt="Vine ring printed"></div>
+                <div class="slide-img"><img src="assets/studio925/vineringcast.png"    alt="Vine ring cast"></div>
+              </div>
+              <div class="slide-img"><img src="assets/studio925/vineringfinal.png"    alt="Vine ring final"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Snake ring iteration -->
+        <div class="slide-cell">
+          <div class="slide-cols">
+            <div class="slide-col">
+              <div class="slide-img"><img src="assets/studio925/1115.png"           alt="Snake ring showcase"></div>
+              <div class="slide-img"><img src="assets/studio925/snakeringsliced.png" alt="Snake ring sliced"></div>
+            </div>
+            <div class="slide-col">
+              <div class="slide-img"><img src="assets/studio925/Ringa render.png"    alt="Ring Blender render"></div>
+              <div class="slide-pair">
+                <div class="slide-img"><img src="assets/studio925/snakeringprinted.jpg" alt="Snake ring printed"></div>
+                <div class="slide-img"><img src="assets/studio925/snakeringcast.jpg"    alt="Snake ring cast"></div>
+              </div>
+              <div class="slide-img"><img src="assets/studio925/snakeringfinal.jpg"  alt="Snake ring final"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="slide-counter t-switzer-light">
+        <span id="slider-physical-cur">1</span>/2
+      </p>
+    </div>
+
+    <div class="body-text-col mt-xl">
+      <p class="t-switzer-light body-text">From modeling to 3D Printing to casting and refinement. There were definitely quite a lot of surface defects from the 3D printing process — mostly from user error. The rings however were dimensionally accurate and looked acceptably close to their original rendering which was the main success criteria of experiment 1.</p>
+    </div>
+
+    <!-- ── SECTION: SYSTEMS AND TESTING — 3-slide click-to-advance ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <p class="section-label t-mono-light mt-xl">[SYSTEMS AND TESTING]</p>
+
+    <div class="content-slider mt-md" id="slider-systems" style="aspect-ratio: 1484/965">
+      <div class="slider-track" id="slider-systems-track">
+
+        <!-- Slide 1: Full system / production overview -->
+        <div class="slide-cell">
+          <div class="slide-single">
+            <img src="assets/studio925/fullsystem.png" alt="Full design system">
+          </div>
+        </div>
+
+        <!-- Slide 2: User testing 2×2 -->
+        <div class="slide-cell">
+          <div class="slide-grid-2x2">
+            <div class="slide-img"><img src="assets/studio925/usertesting.png"     alt="User testing session"></div>
+            <div class="slide-img"><img src="assets/studio925/ringblendertest.png" alt="Ring blender test"></div>
+            <div class="slide-img"><img src="assets/studio925/figmausertest.png"   alt="Figma user test flow 1"></div>
+            <div class="slide-img"><img src="assets/studio925/figmausertest2.png"  alt="Figma user test flow 2"></div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Coha ring 2×2 -->
+        <div class="slide-cell">
+          <div class="slide-grid-2x2">
+            <div class="slide-img"><img src="assets/studio925/coharing.png"              alt="Coha ring"></div>
+            <div class="slide-img"><img src="assets/studio925/coharingfinalprinted.png"  alt="Coha ring final printed"></div>
+            <div class="slide-img"><img src="assets/studio925/coharingprinted.png"       alt="Coha ring printed"></div>
+            <div class="slide-img"><img src="assets/studio925/cohafinalring.png"         alt="Coha ring final"></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="slide-counter t-switzer-light">
+        <span id="slider-systems-cur">1</span>/3
+      </p>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer mt-xl">
+      <p class="footer-headline t-switzer-medium">Coffee? Chat?</p>
+      <div class="footer-cols mt-2xl">
+        <div class="footer-left">
+          <a class="footer-contact t-mono-regular" href="mailto:sammshinny@gmail.com">Sammshinny@gmail.com</a>
+          <a class="footer-contact t-mono-regular" href="https://www.instagram.com/sam_sam_sam_shin/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-contact t-mono-regular" href="https://www.linkedin.com/in/sam-shin-731513104/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+        <div class="footer-right">
+          <p class="footer-contact t-mono-regular">Auckland, New Zealand</p>
+        </div>
+      </div>
+      <div class="footer-btt mt-xl">
+        <a class="back-to-top" href="#">[Back to top ↑]</a>
+      </div>
+    </footer>
+
+    <div class="section-divider"></div>
+
+    <div class="footer-credits t-mono-light">
+      <p>DESIGNED BY SAM SHIN</p>
+      <p>@2026_ALL_RIGHTS_RESERVED</p>
+    </div>
+
+  </main>
+
+  <div id="custom-cursor" class="custom-cursor">CLICK</div>
+
+  <script>
+  (function () {
+
+    /* ── Custom video player ── */
+    (function () {
+      var media      = document.getElementById('hero-media');
+      var video      = document.getElementById('hero-video');
+      var pp         = document.getElementById('vid-pp');
+      var scrub      = document.getElementById('vid-scrub');
+      var fill       = document.getElementById('vid-scrub-fill');
+      var fs         = document.getElementById('vid-fs');
+      var centerPlay = document.getElementById('vid-center-play');
+      if (!video || !media) return;
+
+      function setPlaying(p) {
+        pp.setAttribute('data-state', p ? 'playing' : 'paused');
+        media.classList.toggle('vid-playing', p);
+      }
+      function togglePlay() { video.paused ? video.play() : video.pause(); }
+
+      video.addEventListener('click',      function (e) { e.stopPropagation(); togglePlay(); });
+      pp.addEventListener('click',         function (e) { e.stopPropagation(); togglePlay(); });
+      centerPlay.addEventListener('click', function (e) { e.stopPropagation(); togglePlay(); });
+      video.addEventListener('play',       function () { setPlaying(true);  });
+      video.addEventListener('pause',      function () { setPlaying(false); });
+      video.addEventListener('ended',      function () { setPlaying(false); video.load(); });
+      video.addEventListener('timeupdate', function () {
+        if (video.duration) fill.style.width = (video.currentTime / video.duration * 100) + '%';
+      });
+
+      var dragging = false;
+      function scrubTo(e) {
+        var r = scrub.getBoundingClientRect();
+        video.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (video.duration || 0);
+      }
+      scrub.addEventListener('mousedown', function (e) { e.stopPropagation(); dragging = true; scrubTo(e); });
+      document.addEventListener('mousemove', function (e) { if (dragging) scrubTo(e); });
+      document.addEventListener('mouseup',   function ()  { dragging = false; });
+      fs.addEventListener('click', function (e) {
+        e.stopPropagation();
+        (video.requestFullscreen || video.webkitRequestFullscreen || video.mozRequestFullScreen).call(video);
+      });
+    }());
+
+    /* ── Click-to-advance slideshows ── */
+    function makeSlider(trackId, curId, total) {
+      var track = document.getElementById(trackId);
+      var cur   = document.getElementById(curId);
+      var idx   = 0;
+      if (!track || !cur) return;
+      track.parentElement.addEventListener('click', function () {
+        idx = (idx + 1) % total;
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+        cur.textContent = idx + 1;
+      });
+    }
+    makeSlider('slider-physical-track', 'slider-physical-cur', 2);
+    makeSlider('slider-systems-track',  'slider-systems-cur',  3);
+
+    /* ── Inner grid lines: start below meta-strip ── */
+    (function () {
+      var mainEl   = document.querySelector('main');
+      var line22   = document.querySelector('.meta-strip + .section-divider');
+      var fallback = document.querySelector('.meta-strip');
+      var refEl    = line22 || fallback;
+      if (!mainEl || !refEl) return;
+      function setInnerLineStart() {
+        var mainTop = mainEl.getBoundingClientRect().top  + window.scrollY;
+        var refBot  = refEl.getBoundingClientRect().bottom + window.scrollY;
+        mainEl.style.setProperty('--inner-line-start', (refBot - mainTop) + 'px');
+      }
+      setInnerLineStart();
+      window.addEventListener('resize', setInnerLineStart);
+    }());
+
+    /* ── Back to top ── */
+    var btt = document.querySelector('.back-to-top');
+    if (btt) btt.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  }());
+  </script>
+</body>
+</html>

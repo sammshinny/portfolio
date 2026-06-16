@@ -14,7 +14,7 @@
 <body>
 
   <!-- ── HEADER ── -->
-  <div class="header">
+  <header class="header">
     <a href="index.html" class="site-name">Sam Shin</a>
     <nav class="header-nav">
       <a href="index.html">Home</a>
@@ -22,32 +22,33 @@
       <a href="play.html">Play</a>
       <a href="about.html">About</a>
     </nav>
-  </div>
+  </header>
 
-  <main class="page-wrap">
-
-    <!-- ── BACKGROUND GRID LINES ── -->
-    <div class="grid-overlay" aria-hidden="true">
-      <div class="grid-rail grid-rail--left"></div>
-      <div class="grid-rail grid-rail--right"></div>
-      <div class="grid-col grid-col--1"></div>
-      <div class="grid-col grid-col--2"></div>
-      <div class="grid-col grid-col--3"></div>
-    </div>
+  <!-- ── MAIN — 4-COLUMN GRID ──
+       margin: 0 200px creates the outer rails.
+       Grid lines via background-image (no overlay div).
+  ── -->
+  <main>
 
     <!-- ── PHOTO COLLAGE ──
-         Coordinates: Figma left values are relative to 1920px canvas.
-         Figma top values are (original y − 78px header).
+         Positions converted from 1920px Figma canvas to
+         content-area space (1520px = viewport − 400px rails).
+         left values = Figma left − 200px rail.
+         Percentages are of the 1520px content width:
+           col 1 start = 0%   (0px)
+           col 2 start = 25%  (380px)
+           col 3 start = 50%  (760px)
+           col 4 start = 75%  (1140px)
     ── -->
     <section class="play-section">
 
       <!-- IMG_2376: circuit board / electronics setup -->
-      <div class="play-photo" style="left:calc(10% + 26px);top:19px;width:360px;height:480px">
+      <div class="play-photo" style="left:18px;top:19px;width:360px;height:480px">
         <img src="assets/play/img-2376.png" alt="Electronics build">
       </div>
 
-      <!-- Media: Ableton / controller setup (video fill — add image manually) -->
-      <div class="play-photo" style="left:calc(30% + 22px);top:19px;width:380px;height:676px;background:#d8d8d8"></div>
+      <!-- Media: Ableton / controller setup -->
+      <div class="play-photo" style="left:calc(25% + 18px);top:19px;width:380px;height:676px;background:#d8d8d8"></div>
 
       <!-- Pingu: 3D rendered character -->
       <div class="play-photo" style="left:calc(50% + 145px);top:19px;width:770px;height:433px">
@@ -55,7 +56,7 @@
       </div>
 
       <!-- Coha ring: silver ring render -->
-      <div class="play-photo" style="left:calc(70% + 26px);top:476px;width:505px;height:284px">
+      <div class="play-photo" style="left:calc(75% + 30px);top:476px;width:505px;height:284px">
         <img src="assets/play/coha-ring.png" alt="Coha ring 3D render">
       </div>
 

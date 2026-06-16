@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headspace — Case Study | Sam Shin</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="headspace.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       STICKY SITE HEADER (outside main grid)
+  ═══════════════════════════════════════ -->
+  <header class="header">
+    <a href="index.html" class="site-name">Sam Shin</a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="Work.html">Work</a>
+      <a href="play.html">Play</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       MAIN — 4-COLUMN GRID
+       padding: 0 200px creates the outer rails.
+       All direct children use grid-column spans.
+       No overlay div. No pixel margins for alignment.
+  ═══════════════════════════════════════ -->
+  <main>
+
+    <!-- ── CASE STUDY HEADER BOX ──────────────
+         Subgrid: title in cols 1–2, desc in col 4.
+         Left/right borders = outer rail marks.
+    ── -->
+    <div class="cs-header">
+      <!-- cols 1–2 -->
+      <div class="cs-title-col">
+        <div class="cs-date-row">
+          <span class="t-mono-light">[CASE STUDY]</span>
+          <span class="t-mono-regular">2025</span>
+        </div>
+        <p class="cs-title">Headspace</p>
+      </div>
+      <!-- col 3 is intentionally empty — subgrid leaves it blank -->
+      <!-- col 4 -->
+      <p class="cs-desc t-mono-light">A branded explainer video that showcases Headspace's newest addition to their app.</p>
+      <div class="corner-cross corner-cross--left"  aria-hidden="true"></div>
+      <div class="corner-cross corner-cross--right" aria-hidden="true"></div>
+    </div>
+
+    <!-- ── HERO VIDEO ──────────────────────────
+         grid-column 1/-1 + padding 0 18px
+         = 1484px wide video, inset 18px from each rail.
+    ── -->
+    <section class="hero-section mt-18">
+      <div class="hero-media" id="hero-media">
+        <video id="hero-video" poster="assets/landingpage/headspace_thumbnail.png">
+          <source src="assets/headspace/Headspace.mp4" type="video/mp4">
+        </video>
+        <button class="vid-center-play" id="vid-center-play" aria-label="Play"></button>
+        <div class="vid-controls" id="vid-controls">
+          <button class="vid-pp" id="vid-pp" data-state="paused" aria-label="Play/Pause"></button>
+          <div class="vid-scrub" id="vid-scrub">
+            <div class="vid-scrub-fill" id="vid-scrub-fill"></div>
+          </div>
+          <button class="vid-fs" id="vid-fs" aria-label="Fullscreen"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Line 6: top horizontal rule of contextbox (grid system) ── -->
+    <div class="section-divider mt-18" aria-hidden="true"></div>
+
+    <!-- ── METADATA STRIP (Contextbox) ─────────
+         Subgrid: 4 cols → 4 items, one per column.
+         Left/right borders = outer rail continuation.
+         Line 6 (above) and Line 22 (below) = section-dividers.
+    ── -->
+    <div class="meta-strip">
+      <div class="meta-col"><!-- col 1 -->
+        <p class="meta-label t-mono-regular">[CONTEXT]</p>
+        <p class="meta-value t-mono-light">Academic project</p>
+      </div>
+      <div class="meta-col"><!-- col 2 -->
+        <p class="meta-label t-mono-regular">[TIMELINE]</p>
+        <p class="meta-value t-mono-light">8 weeks</p>
+      </div>
+      <div class="meta-col"><!-- col 3 -->
+        <p class="meta-label t-mono-regular">[ROLE]</p>
+        <p class="meta-value t-mono-light">Design | Illustration | Animation</p>
+      </div>
+      <div class="meta-col"><!-- col 4 -->
+        <p class="meta-label t-mono-regular">[Tools]</p>
+        <p class="meta-value t-mono-light">Adobe After Effects, Illustrator</p>
+      </div>
+    </div>
+
+    <!-- ── Line 22: bottom horizontal rule of contextbox (grid system) ── -->
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- ── SECTION: FINALISED STYLEFRAMES ──────
+         section-label → col 1 only
+         gallery-2col  → cols 1–4 (nested 2-col grid)
+         gallery-full  → cols 1–4 (full-width image)
+         body-text-col → cols 3–4 (right half)
+    ── -->
+    <p class="section-label t-mono-light mt-xl">[Finalised Styleframes]</p>
+
+    <div class="gallery-2col mt-md">
+      <div class="gallery-img"><img src="assets/headspace/Styleframe 4.png" alt="Styleframe 4"></div>
+      <div class="gallery-img"><img src="assets/headspace/Styleframe 1.png" alt="Styleframe 1"></div>
+      <div class="gallery-img"><img src="assets/headspace/Styleframe 6.png" alt="Styleframe 6"></div>
+      <div class="gallery-img"><img src="assets/headspace/Styleframe 7.png" alt="Styleframe 7"></div>
+    </div>
+
+    <div class="gallery-full mt-md">
+      <img src="assets/headspace/Styleframe 5.png" alt="Styleframe 5">
+    </div>
+
+    <div class="body-text-col mt-xl">
+      <p class="t-switzer-light body-text">I adhered closely to Headspace's visual language found in their branding guidelines for this project. Rather than creating a whole new aesthetic, the challenge was understanding and applying their visual system in not only the animations but also the overall tone and narrative style. By creating a sense of scale inside the illustrations, environments felt dreamlike with depth and dimension despite their simple and flat vector constructions.</p>
+    </div>
+
+    <!-- ── SECTION: SOCIAL MEDIA CAROUSEL ──────
+         carousel-3col → cols 1–4 (nested 3-col grid,
+         5 items wrap naturally: 3 row 1, 2 row 2)
+         body-text-col → cols 3–4
+    ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <p class="section-label t-mono-light mt-xl">[SOCIAL MEDIA CAROUSEL]</p>
+
+    <div class="carousel-3col mt-md">
+      <div class="carousel-cell"><img src="assets/headspace/Carousel 4.gif"     alt="Carousel slide 1"></div>
+      <div class="carousel-cell"><img src="assets/headspace/01 Carousel 2.gif"  alt="Carousel slide 2"></div>
+      <div class="carousel-cell"><img src="assets/headspace/01 Carousel.gif"    alt="Carousel slide 3"></div>
+      <div class="carousel-cell"><img src="assets/headspace/Carousel 3.gif"     alt="Carousel slide 4"></div>
+      <div class="carousel-cell"><img src="assets/headspace/Carousel 2.gif"     alt="Carousel slide 5"></div>
+    </div>
+
+    <div class="body-text-col mt-xl">
+      <p class="t-switzer-light body-text">A social media carousel was developed as a part of the creative media strategy. They were designed to be minimalistic and engaging without adding to the visual overwhelm of short form media to keep in line with the goal of providing a calm, soothing experience for young adults that frequent Instagram at night.</p>
+    </div>
+
+    <!-- ── SECTION: WEB READY GIF ───────────────
+         browser-wrap → cols 1–4 + 18px side padding
+         = 1484px wide mockup, same width as hero
+    ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <p class="section-label t-mono-light mt-xl">[WEB READY GIF]</p>
+
+    <div class="gallery-full mt-md">
+      <video src="assets/headspace/webreadygif.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- ── FOOTER (inside main grid) ──────────
+         section-dividers span 1/-1, matching every
+         other horizontal rule on the page.
+         footer + footer-credits use grid-column 1/-1
+         + 18px padding, same as all content sections.
+    ── -->
+    <div class="section-divider mt-2xl">
+      <div class="divider-mark divider-mark--left"  aria-hidden="true"></div>
+      <div class="divider-mark divider-mark--right" aria-hidden="true"></div>
+    </div>
+
+    <footer class="footer mt-xl">
+      <p class="footer-headline t-switzer-medium">Coffee? Chat?</p>
+      <div class="footer-cols mt-2xl">
+        <div class="footer-left">
+          <a class="footer-contact t-mono-regular" href="mailto:sammshinny@gmail.com">Sammshinny@gmail.com</a>
+          <a class="footer-contact t-mono-regular" href="https://www.instagram.com/sam_sam_sam_shin/" target="_blank" rel="noopener">Instagram</a>
+          <a class="footer-contact t-mono-regular" href="https://www.linkedin.com/in/sam-shin-731513104/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+        <div class="footer-right">
+          <p class="footer-contact t-mono-regular">Auckland, New Zealand</p>
+        </div>
+      </div>
+      <div class="footer-btt mt-xl">
+        <a class="back-to-top" href="#">[Back to top ↑]</a>
+      </div>
+    </footer>
+
+    <div class="section-divider"></div>
+
+    <div class="footer-credits t-mono-light">
+      <p>DESIGNED BY SAM SHIN</p>
+      <p>@2026_ALL_RIGHTS_RESERVED</p>
+    </div>
+
+  </main>
+
+  <div id="custom-cursor" class="custom-cursor">CLICK</div>
+
+  <script>
+  (function () {
+
+    /* ── Custom video player ── */
+    (function () {
+      var media      = document.getElementById('hero-media');
+      var video      = document.getElementById('hero-video');
+      var pp         = document.getElementById('vid-pp');
+      var scrub      = document.getElementById('vid-scrub');
+      var fill       = document.getElementById('vid-scrub-fill');
+      var fs         = document.getElementById('vid-fs');
+      var centerPlay = document.getElementById('vid-center-play');
+      if (!video || !media) return;
+
+      function setPlaying(p) {
+        pp.setAttribute('data-state', p ? 'playing' : 'paused');
+        media.classList.toggle('vid-playing', p);
+      }
+      function togglePlay() { video.paused ? video.play() : video.pause(); }
+
+      video.addEventListener('click',      function (e) { e.stopPropagation(); togglePlay(); });
+      pp.addEventListener('click',         function (e) { e.stopPropagation(); togglePlay(); });
+      centerPlay.addEventListener('click', function (e) { e.stopPropagation(); togglePlay(); });
+      video.addEventListener('play',       function () { setPlaying(true);  });
+      video.addEventListener('pause',      function () { setPlaying(false); });
+      video.addEventListener('ended',      function () { setPlaying(false); video.load(); });
+      video.addEventListener('timeupdate', function () {
+        if (video.duration) fill.style.width = (video.currentTime / video.duration * 100) + '%';
+      });
+
+      var dragging = false;
+      function scrubTo(e) {
+        var r = scrub.getBoundingClientRect();
+        video.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * (video.duration || 0);
+      }
+      scrub.addEventListener('mousedown', function (e) { e.stopPropagation(); dragging = true; scrubTo(e); });
+      document.addEventListener('mousemove', function (e) { if (dragging) scrubTo(e); });
+      document.addEventListener('mouseup',   function ()  { dragging = false; });
+      fs.addEventListener('click', function (e) {
+        e.stopPropagation();
+        (video.requestFullscreen || video.webkitRequestFullscreen || video.mozRequestFullScreen).call(video);
+      });
+    }());
+
+    /* ── Inner grid lines: start at bottom of Line 22 (section-divider after meta-strip) ── */
+    (function () {
+      var mainEl  = document.querySelector('main');
+      var line22  = document.querySelector('.meta-strip + .section-divider');
+      var fallback = document.querySelector('.meta-strip');
+      var refEl   = line22 || fallback;
+      if (!mainEl || !refEl) return;
+      function setInnerLineStart() {
+        var mainTop = mainEl.getBoundingClientRect().top + window.scrollY;
+        var refBot  = refEl.getBoundingClientRect().bottom + window.scrollY;
+        mainEl.style.setProperty('--inner-line-start', (refBot - mainTop) + 'px');
+      }
+      setInnerLineStart();
+      window.addEventListener('resize', setInnerLineStart);
+    }());
+
+    /* ── Back to top ── */
+    var btt = document.querySelector('.back-to-top');
+    if (btt) btt.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+  }());
+  </script>
+</body>
+</html>
