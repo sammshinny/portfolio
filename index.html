@@ -9,11 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
+  <header class="header header--overlay">
     <a href="index.html" class="site-name">Sam Shin</a>
     <nav class="header-nav">
       <a href="index.html">Home</a>
@@ -30,9 +31,9 @@
 <script>
 (function () {
   var playlist = [
+    'assets/landingpage/Lumiere_Thumbnail.mp4',
     'assets/landingpage/925_Thumbnail.mp4',
     'assets/landingpage/Headspace_Thumbnail.mp4',
-    'assets/landingpage/Lumiere_Thumbnail.mp4',
     'assets/landingpage/Repo_Thumbnail.mp4'
   ];
   var idx = 0;
@@ -65,7 +66,7 @@
     if (vid.readyState >= 2) {
       try {
         /* Map viewport header height to video coordinates */
-        var srcH = Math.ceil(vid.videoHeight * (78 / window.innerHeight));
+        var srcH = Math.ceil(vid.videoHeight * (header.offsetHeight / window.innerHeight));
         ctx.drawImage(vid, 0, 0, vid.videoWidth, srcH, 0, 0, 8, 8);
         var px  = ctx.getImageData(0, 0, 8, 8).data;
         var lum = 0;
