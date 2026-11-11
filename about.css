@@ -1,15 +1,21 @@
 /* ─────────────────────────
    ABOUT — CONTENT SECTION
-   grid-column 1/-1 spans the full 1520px content area.
-   Photos and text are absolutely positioned within it.
-   All left values = Figma left − 200px rail.
-   All top values = Figma top − 78px header (unchanged).
-   min-height: Figma y=1139 − header 78px = 1061px.
+   Two halves: the photo collage (cols 1–2) and the text (cols 3–4).
+   The collage keeps its Figma pixel positions inside a 760 x 1061 box
+   (left = Figma left − 200px rail, top = Figma top − 78px header) and
+   fit.js scales that box to the width of its column.
 ───────────────────────── */
 .about-section {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);   /* columns don't stretch to the collage */
+}
+
+.about-collage-col { min-width: 0; overflow: hidden; }
+
+.about-collage {
   position: relative;
-  min-height: 1061px;
+  height: 1061px;
 }
 
 /* ─────────────────────────
@@ -28,20 +34,26 @@
 
 /* ─────────────────────────
    ABOUT — TEXT (right half, cols 3–4)
+   At 1920px wide: name 88px in and 399px down, as in Figma.
+   Percentage padding is measured against the column's width.
 ───────────────────────── */
+.about-text {
+  padding: 52.5% var(--gutter) 0 11.6%;
+}
+
 .about-name {
-  position: absolute;
   font-family: 'Switzer', sans-serif;
   font-weight: 400;
-  font-size: 128px;
+  font-size: clamp(56px, 6.67vw, 128px);
   line-height: 1;
-  letter-spacing: -3.84px;
+  letter-spacing: -0.03em;
   color: #000;
   white-space: nowrap;
 }
 
 .about-desc {
-  position: absolute;
+  margin: clamp(24px, 3.3vw, 63px) 0 0 6px;
+  max-width: 552px;
   font-size: 16px;
   line-height: 1.5;
   color: #000;
@@ -49,6 +61,17 @@
 
 .about-desc p { margin: 0; }
 .about-desc p + p { margin-top: 1em; }
+
+@media (max-width: 1199px) {
+  .about-text { padding-left: var(--gutter); }
+  .about-desc { font-size: 15px; }
+}
+
+@media (max-width: 767px) {
+  .about-section { grid-template-columns: minmax(0, 1fr); }
+  .about-text { padding: 0 var(--gutter) 56px; }
+  .about-desc { margin-left: 2px; }
+}
 
 /* ─────────────────────────
    FOOTER

@@ -514,3 +514,26 @@ main > section {
 .mt-2xl { margin-top: 120px; }
 .mb-sm  { margin-bottom: 24px; }
 .mb-md  { margin-bottom: 40px; }
+
+/* ─────────────────────────
+   RESPONSIVE (breakpoints as in site.css)
+   ".fluid" is on <body>; it is repeated here where a shared rule in
+   site.css has to be overridden.
+───────────────────────── */
+.logo-bracket { width: min(345px, 100%); }
+
+/* Below 1200px the collage sliders stack (site.css), with their own side padding */
+@media (max-width: 1199px) {
+  .fluid .content-slider { margin: 0; }
+}
+
+@media (max-width: 767px) {
+  .two-col, .slider-row { grid-template-columns: minmax(0, 1fr); row-gap: 16px; padding: 0 var(--gutter); }
+  .two-col-left:empty { display: none; }
+  .logo-bracket { margin-left: 0; }
+  .fluid .meta-section { padding: 15px var(--gutter) 19px; }
+  .section-label-row, .slider-row, .production-counter { padding: 0 var(--gutter); }
+  .fluid .section-label { padding-left: 0; }
+  .fluid .gallery-full { margin: 0 var(--gutter); padding: 0; }
+  .counter-text { font-size: 14px; }
+}

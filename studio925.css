@@ -515,3 +515,17 @@
 .mt-2xl { margin-top: 120px; }
 .mb-sm  { margin-bottom: 24px; }
 .mb-md  { margin-bottom: 40px; }
+
+/* ─────────────────────────
+   RESPONSIVE (breakpoints as in site.css)
+   The sliders keep their shape (aspect-ratio) at every width;
+   only the gaps and type get smaller.
+───────────────────────── */
+@media (max-width: 1199px) {
+  .slide-cols, .slide-col, .slide-pair, .slide-grid-2x2 { gap: 18px; }
+}
+@media (max-width: 767px) {
+  .content-slider { margin: 0 var(--gutter); }
+  .slide-cols, .slide-col, .slide-pair, .slide-grid-2x2 { gap: 8px; }
+  .slide-counter { font-size: 14px; padding-bottom: 6px; }
+}

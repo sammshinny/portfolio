@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="about.css">
 </head>
-<body>
+<body class="fluid">
 
   <!-- ── HEADER ── -->
   <header class="header">
@@ -39,80 +39,90 @@
     ── -->
     <section class="about-section">
 
+      <!-- The collage keeps its Figma pixel positions (760 x 1061) and is scaled
+           to fit its column by fit.js; the text beside it is normal flowing text. -->
+      <div class="about-collage-col">
+      <div class="about-collage" data-fit="760" data-fit-always>
+
       <!-- Photo collage — left half (cols 1–2) -->
 
       <!-- Guitar: Figma left=580 → 380 -->
       <div class="about-photo" style="left:380px;top:124px;width:210px;height:242px;overflow:hidden;z-index:1">
-        <img src="assets/about/guitar.png" alt="Guitar"
-             style="position:absolute;width:100.08%;height:129.86%;top:0;left:-0.04%">
+        <img src="assets/about/guitar.webp" alt="Guitar"
+             style="position:absolute;width:100.08%;height:129.86%;top:0;left:-0.04%;aspect-ratio:669/1000">
       </div>
 
       <!-- Snowboard: Figma left=242 → 42 -->
       <div class="about-photo" style="left:42px;top:166px;width:167px;height:275px;overflow:hidden">
-        <img src="assets/about/snowboard.png" alt="Snowboard"
-             style="position:absolute;width:100%;height:131.04%;top:-11.08%;left:0">
+        <img src="assets/about/snowboard.webp" alt="Snowboard"
+             style="position:absolute;width:100%;height:131.04%;top:-11.08%;left:0;aspect-ratio:462/1000">
       </div>
 
       <!-- Alpaca: Figma left=439 → 239 -->
       <div class="about-photo" style="left:239px;top:194px;width:331px;height:221px">
-        <img src="assets/about/alpaca.png" alt="Alpaca">
+        <img style="aspect-ratio:1000/667" src="assets/about/alpaca.webp" alt="Alpaca">
       </div>
 
       <!-- Fish: Figma left=805 → 605 -->
       <div class="about-photo" style="left:605px;top:156px;width:166px;height:221px">
-        <img src="assets/about/fish.png" alt="Fish">
+        <img style="aspect-ratio:756/1008" src="assets/about/fish.png" alt="Fish">
       </div>
 
       <!-- Camera4: Figma left=269 → 69 -->
       <div class="about-photo" style="left:69px;top:462px;width:226px;height:152px">
-        <img src="assets/about/camera4.png" alt="Camera">
+        <img style="aspect-ratio:1000/669" src="assets/about/camera4.webp" alt="Camera">
       </div>
 
       <!-- Camera1: Figma left=469 → 269 -->
       <div class="about-photo" style="left:269px;top:435px;width:229px;height:129px">
-        <img src="assets/about/camera1.png" alt="Camera">
+        <img style="aspect-ratio:1138/640" src="assets/about/camera1.png" alt="Camera">
       </div>
 
       <!-- Camera3: Figma left=737 → 537 -->
       <div class="about-photo" style="left:537px;top:435px;width:135px;height:89px">
-        <img src="assets/about/camera3.png" alt="Camera">
+        <img style="aspect-ratio:1000/663" src="assets/about/camera3.webp" alt="Camera">
       </div>
 
       <!-- Kingfish: Figma left=523 → 323 -->
       <div class="about-photo" style="left:323px;top:585px;width:162px;height:205px">
-        <img src="assets/about/kingfish.png" alt="Kingfish">
+        <img style="aspect-ratio:794/1000" src="assets/about/kingfish.webp" alt="Kingfish">
       </div>
 
       <!-- Spearfishing: Figma left=218 → 18 -->
       <div class="about-photo" style="left:18px;top:594px;width:256px;height:341px">
-        <img src="assets/about/spearfishing.png" alt="Spearfishing">
+        <img style="aspect-ratio:1000/750" src="assets/about/spearfishing.webp" alt="Spearfishing">
       </div>
 
       <!-- Tennis: Figma left=716 → 516 -->
       <div class="about-photo" style="left:516px;top:538px;width:198px;height:217px;overflow:hidden">
-        <img src="assets/about/tennis.png" alt="Tennis"
-             style="position:absolute;width:100%;height:121.45%;top:-21.38%;left:0">
+        <img src="assets/about/tennis.webp" alt="Tennis"
+             style="position:absolute;width:100%;height:121.45%;top:-21.38%;left:0;aspect-ratio:1000/750">
       </div>
 
       <!-- Bori: Figma left=664 → 464 -->
       <div class="about-photo" style="left:464px;top:711px;width:160px;height:213px">
-        <img src="assets/about/bori.png" alt="Bori">
+        <img style="aspect-ratio:1284/1712" src="assets/about/bori.png" alt="Bori">
       </div>
 
       <!-- Camera2: Figma left=793 → 593 -->
       <div class="about-photo" style="left:593px;top:856px;width:121px;height:81px">
-        <img src="assets/about/camera2.png" alt="Camera">
+        <img style="aspect-ratio:1000/665" src="assets/about/camera2.webp" alt="Camera">
       </div>
 
       <!-- Text — right half (cols 3–4) -->
 
       <!-- "Sam Shin": Figma left=1048 → 848 -->
-      <p class="about-name" style="left:848px;top:399px">Sam Shin</p>
+      </div>
+      </div>
+
+      <div class="about-text">
+      <p class="about-name">Sam Shin</p>
 
       <!-- Bio: Figma left=1054 → 854 -->
-      <div class="about-desc t-mono-regular" style="left:854px;top:590px;width:552px">
+      <div class="about-desc t-mono-regular">
         <p>Outside of design, I spend most of my time with my cameras, guitars and in the great outdoors. I love to dive deep into my hobbies.</p>
         <p>I'm a serial tinkerer — be it a camera, a speargun or a styleframe, I tend to obsess over it until it looks and feels just right.</p>
+      </div>
       </div>
 
     </section>
@@ -160,5 +170,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<script src="fit.js"></script>
 </body>
 </html>

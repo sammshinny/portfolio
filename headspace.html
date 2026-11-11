@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="headspace.css">
 </head>
-<body>
+<body class="fluid">
 
   <!-- ═══════════════════════════════════════
        STICKY SITE HEADER (outside main grid)
@@ -61,7 +61,7 @@
     ── -->
     <section class="hero-section mt-18">
       <div class="hero-media" id="hero-media">
-        <video id="hero-video" poster="assets/landingpage/headspace_thumbnail.png">
+        <video id="hero-video" poster="assets/landingpage/headspace_thumbnail.webp">
           <source src="assets/headspace/Headspace.mp4" type="video/mp4">
         </video>
         <button class="vid-center-play" id="vid-center-play" aria-label="Play"></button>
@@ -114,14 +114,14 @@
     <p class="section-label t-mono-light mt-xl">[Finalised Styleframes]</p>
 
     <div class="gallery-2col mt-md">
-      <div class="gallery-img"><img src="assets/headspace/Styleframe 4.png" alt="Styleframe 4"></div>
-      <div class="gallery-img"><img src="assets/headspace/Styleframe 1.png" alt="Styleframe 1"></div>
-      <div class="gallery-img"><img src="assets/headspace/Styleframe 6.png" alt="Styleframe 6"></div>
-      <div class="gallery-img"><img src="assets/headspace/Styleframe 7.png" alt="Styleframe 7"></div>
+      <div class="gallery-img"><img style="aspect-ratio:2400/1350" loading="lazy" decoding="async" src="assets/headspace/Styleframe 4.webp" alt="Styleframe 4"></div>
+      <div class="gallery-img"><img style="aspect-ratio:2400/1350" loading="lazy" decoding="async" src="assets/headspace/Styleframe 1.webp" alt="Styleframe 1"></div>
+      <div class="gallery-img"><img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" src="assets/headspace/Styleframe 6.png" alt="Styleframe 6"></div>
+      <div class="gallery-img"><img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" src="assets/headspace/Styleframe 7.png" alt="Styleframe 7"></div>
     </div>
 
     <div class="gallery-full mt-md">
-      <img src="assets/headspace/Styleframe 5.png" alt="Styleframe 5">
+      <img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" src="assets/headspace/Styleframe 5.png" alt="Styleframe 5">
     </div>
 
     <div class="body-text-col mt-xl">
@@ -141,11 +141,11 @@
     <p class="section-label t-mono-light mt-xl">[SOCIAL MEDIA CAROUSEL]</p>
 
     <div class="carousel-3col mt-md">
-      <div class="carousel-cell"><img src="assets/headspace/Carousel 4.gif"     alt="Carousel slide 1"></div>
-      <div class="carousel-cell"><img src="assets/headspace/01 Carousel 2.gif"  alt="Carousel slide 2"></div>
-      <div class="carousel-cell"><img src="assets/headspace/01 Carousel.gif"    alt="Carousel slide 3"></div>
-      <div class="carousel-cell"><img src="assets/headspace/Carousel 3.gif"     alt="Carousel slide 4"></div>
-      <div class="carousel-cell"><img src="assets/headspace/Carousel 2.gif"     alt="Carousel slide 5"></div>
+      <div class="carousel-cell"><video src="assets/headspace/Carousel 4.mp4" poster="assets/headspace/Carousel 4.poster.webp" muted loop playsinline preload="none" data-lazy-play aria-label="Carousel slide 1"></video></div>
+      <div class="carousel-cell"><video src="assets/headspace/01 Carousel 2.mp4" poster="assets/headspace/01 Carousel 2.poster.webp" muted loop playsinline preload="none" data-lazy-play aria-label="Carousel slide 2"></video></div>
+      <div class="carousel-cell"><video src="assets/headspace/01 Carousel.mp4" poster="assets/headspace/01 Carousel.poster.webp" muted loop playsinline preload="none" data-lazy-play aria-label="Carousel slide 3"></video></div>
+      <div class="carousel-cell"><video src="assets/headspace/Carousel 3.mp4" poster="assets/headspace/Carousel 3.poster.webp" muted loop playsinline preload="none" data-lazy-play aria-label="Carousel slide 4"></video></div>
+      <div class="carousel-cell"><video src="assets/headspace/Carousel 2.mp4" poster="assets/headspace/Carousel 2.poster.webp" muted loop playsinline preload="none" data-lazy-play aria-label="Carousel slide 5"></video></div>
     </div>
 
     <div class="body-text-col mt-xl">
@@ -164,7 +164,7 @@
     <p class="section-label t-mono-light mt-xl">[WEB READY GIF]</p>
 
     <div class="gallery-full mt-md">
-      <video src="assets/headspace/webreadygif.mp4" autoplay muted loop playsinline></video>
+      <video src="assets/headspace/webreadygif.mp4" muted loop playsinline preload="none" data-lazy-play></video>
     </div>
 
     <!-- ── FOOTER (inside main grid) ──────────
@@ -275,5 +275,6 @@
 
   }());
   </script>
+<script src="lazy.js" defer></script>
 </body>
 </html>

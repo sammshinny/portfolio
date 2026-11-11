@@ -282,7 +282,8 @@
   background: #e8e8e8;
 }
 
-.carousel-cell img {
+.carousel-cell img,
+.carousel-cell video {
   width: 100%;
   height: 100%;
   object-fit: cover;

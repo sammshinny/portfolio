@@ -20,18 +20,14 @@
 /* ── Breakpoints (the same on every page) ──
    desktop ≥ 1200px · tablet 768–1199px · phone < 768px
    CSS can't put variables in @media, so these numbers are repeated
-   in each media query below and in play.js (BREAKPOINTS).
-   Pages opt in with <body class="fluid">; the others stay fixed-pixel
-   until they are made responsive. */
+   in the media queries (here, in the RESPONSIVE section at the end of
+   this file and in the page stylesheets) and in play.js / fit.js.
+   Pages opt in with <body class="fluid">. */
 @media (max-width: 1199px) {
   .fluid { --rail: 40px; }
-  .fluid .header-nav { gap: 32px; }
 }
 @media (max-width: 767px) {
   .fluid { --rail: 16px; --gutter: 12px; --header-h: 60px; }
-  .fluid .site-name { font-size: 26px; letter-spacing: -1.4px; }
-  .fluid .header-nav { gap: 16px; }
-  .fluid .header-nav a { font-size: 15px; letter-spacing: -1px; }
 }
 
 /* ── Reset ── */
@@ -231,4 +227,106 @@ main {
   letter-spacing: -1.28px;
   line-height: normal;
   color: var(--ink);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE (pages with <body class="fluid">)
+   The ".fluid" prefix also makes these rules win over the page
+   stylesheets, which load after this file.
+══════════════════════════════════════════ */
+
+/* Big titles shrink with the window below 1920px wide */
+.fluid .cs-title { font-size: clamp(44px, 6.67vw, 128px); letter-spacing: -0.03em; }
+.fluid .footer-headline { font-size: clamp(44px, 5vw, 96px); letter-spacing: -0.03em; }
+.fluid .cs-header { padding-top: clamp(64px, 7.7vw, 148px); }
+
+/* Collages designed at a fixed pixel width (data-fit="<width>") are scaled to
+   their container by fit.js, which sets --fit. Desktop only: below 1200px the
+   collage sliders stack instead (see "Tablet and phone"), because their text
+   would get too small. data-fit-always scales at every width. */
+@media (min-width: 1200px) {
+  .fluid [data-fit] { width: calc(var(--fit-w) * 1px); zoom: var(--fit, 1); }
+  /* keep collage text from shrinking below about 12px on small laptops */
+  .fluid .slider-page .slide-text { font-size: clamp(20px, calc(13px / var(--fit, 1)), 24px); }
+}
+.fluid [data-fit-always] { width: calc(var(--fit-w) * 1px); zoom: var(--fit, 1); }
+
+/* ── Tablet and phone ── */
+@media (max-width: 1199px) {
+  .fluid .header-nav { gap: 32px; }
+  .fluid .cs-desc { grid-column: 3 / -1; }
+  .fluid .body-text-col { grid-column: 2 / -1; }
+  .fluid .body-text { font-size: 18px; }
+
+  /* Collage sliders: the absolutely placed cells become a simple grid (two
+     columns on tablets, one on phones), each image at its own shape. Only the
+     current slide is shown; a tap still moves to the next one. */
+  .fluid .content-slider:has(.slider-page) { height: auto !important; }
+  .fluid .slider-page {
+    position: static !important; height: auto !important;
+    display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px; align-items: start; padding: 0 var(--gutter);
+  }
+  .fluid .slider-page:not(.is-active) { display: none !important; }
+  .fluid .slider-page .slide-cell,
+  .fluid .slider-page .slide-text { position: static !important; width: 100% !important; height: auto !important; }
+  .fluid .slider-page .slide-cell img,
+  .fluid .slider-page .slide-cell video { height: auto; }
+  .fluid .slider-page .slide-text { grid-column: 1 / -1; font-size: 18px; margin: 8px 0; }
+  .fluid [data-fit-small] { grid-column: 1 / -1; position: static !important; width: calc(var(--fit-w) * 1px) !important; zoom: var(--fit, 1); }
+  .fluid .footer-contact { font-size: 18px; }
+}
+
+/* ── Phone: one column ── */
+@media (max-width: 767px) {
+  .fluid .site-name { font-size: 26px; letter-spacing: -1.4px; }
+  .fluid .header-nav { gap: 16px; }
+  .fluid .header-nav a { font-size: 15px; letter-spacing: -1px; }
+
+  /* Everything in the page grid goes full width; no column lines */
+  .fluid main { background-image: none; }
+  .fluid main > * { grid-column: 1 / -1; }
+
+  .fluid .cs-header { display: block; padding-bottom: var(--gutter); }
+  .fluid .cs-title-col { gap: 16px; padding-right: var(--gutter); }
+  .fluid .cs-title { white-space: normal; overflow-wrap: anywhere; }
+  .fluid .cs-date-row { font-size: 14px; }
+  .fluid .cs-desc { padding: 20px var(--gutter) 0; font-size: 15px; letter-spacing: -0.8px; }
+
+  /* Footer (the same markup on every page) */
+  .fluid .footer { padding: 0 var(--gutter); }
+  .fluid .footer-cols { grid-template-columns: 1fr; row-gap: 32px; }
+  .fluid .footer-contact { font-size: 16px; }
+  .fluid .footer-contact + .footer-contact { margin-top: 24px; }
+  .fluid .back-to-top { font-size: 16px; }
+  .fluid .footer-credits { padding-left: var(--gutter); }
+  .fluid .footer-bottom-row .footer-credits { padding-left: 0; }
+  .fluid .footer-bottom-row { flex-direction: column; align-items: flex-start; gap: 28px; }
+
+  /* Case-study blocks (the same class names on every case study) */
+  .fluid .hero-section { padding: var(--gutter) var(--gutter) 0; }
+  .fluid .meta-strip,
+  .fluid .meta-section { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .fluid .meta-col { padding-left: var(--gutter); padding-right: 8px; }
+  .fluid .meta-label,
+  .fluid .meta-value { font-size: 14px; }
+  .fluid .section-label,
+  .fluid .section-label-right { padding-left: var(--gutter); font-size: 14px; white-space: normal; }
+  .fluid .body-text-col { grid-column: 1 / -1; padding: 0 var(--gutter); }
+  .fluid .body-text { font-size: 17px; }
+  .fluid .gallery-2col,
+  .fluid .gallery-grid { grid-template-columns: 1fr; gap: 12px; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .fluid .gallery-full,
+  .fluid .gallery-wide { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .fluid .carousel-3col,
+  .fluid .gallery-portrait-3col { grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 var(--gutter); }
+
+  .fluid .slider-page { grid-template-columns: minmax(0, 1fr); }
+  .fluid .slider-page .slide-text { font-size: 17px; }
+
+  /* Spacing helpers used by every page */
+  .fluid .mt-md  { margin-top: 28px; }
+  .fluid .mt-lg  { margin-top: 36px; }
+  .fluid .mt-xl  { margin-top: 48px; }
+  .fluid .mt-2xl { margin-top: 64px; }
 }

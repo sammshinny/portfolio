@@ -432,3 +432,44 @@
   user-select: none;
 }
 .custom-cursor.is-visible { opacity: 1; }
+
+/* ─────────────────────────
+   RESPONSIVE (breakpoints as in site.css)
+───────────────────────── */
+
+/* Section images keep their own shape at every width (the inline heights
+   were their height at 1920px). The one cropped image keeps its crop. */
+.section-img { height: auto !important; }
+.section-img[src$="unrealrock.webp"] { aspect-ratio: 724 / 407; }
+
+/* Text beside the two stacked rock images starts level with the second one:
+   first image height + the 36px gap, worked out from the window width
+   (443px at 1920). */
+.bu-text { padding-top: calc(28.11vw - 96.7px); }
+
+@media (max-width: 1199px) {
+  .bu-text { padding-top: calc(28.11vw - 6.7px); }
+  .context-heading, .context-conclusion { font-size: 26px; }
+  .context-body { font-size: 18px; }
+  .context-right { grid-column: 2 / -1; }
+  p.span-3-4 { grid-column: 2 / -1; }
+  .slide-text { font-size: 18px; }
+}
+
+@media (max-width: 767px) {
+  .context-grid, .bu-layout { display: block; }
+  .context-left { padding: 0 var(--gutter); }
+  .context-right { padding: 28px var(--gutter) 0; }
+  .context-heading, .context-conclusion { font-size: 22px; }
+  .context-conclusion { padding: 0 var(--gutter); }
+  .context-body { font-size: 17px; }
+  .span-1-2, .span-2-3, .span-2-4, .span-3-4, .span-1-4 { padding: 0 var(--gutter); }
+  .span-col2, .span-col3 { padding-left: var(--gutter); }
+  .lm-label { white-space: normal; font-size: 14px; }
+  .side-by-side { grid-template-columns: minmax(0, 1fr); row-gap: 12px; }
+  .side-by-side > * { grid-column: 1 / -1; }
+  .bu-imgs { padding: 0 var(--gutter); gap: 12px; }
+  .bu-text { padding: 20px var(--gutter) 0; }
+  .production-counter { padding: 0 var(--gutter); }
+  .counter-text { font-size: 14px; }
+}

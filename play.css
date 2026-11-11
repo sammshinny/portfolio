@@ -196,16 +196,6 @@
   padding: 13px 0 40px 18px;
 }
 
-@media (max-width: 767px) {
-  .footer { padding: 0 var(--gutter); }
-  .footer-headline { font-size: 52px; letter-spacing: -1.6px; }
-  .footer-cols { grid-template-columns: 1fr; row-gap: 32px; }
-  .footer-contact { font-size: 16px; }
-  .footer-contact + .footer-contact { margin-top: 24px; }
-  .back-to-top { font-size: 16px; }
-  .footer-credits { padding-left: var(--gutter); }
-}
-
 /* ─────────────────────────
    SPACING TOKENS
 ───────────────────────── */
@@ -218,8 +208,3 @@
 .mt-2xl { margin-top: 120px; }
 .mb-sm  { margin-bottom: 24px; }
 .mb-md  { margin-bottom: 40px; }
-
-@media (max-width: 767px) {
-  .mt-xl  { margin-top: 48px; }
-  .mt-2xl { margin-top: 56px; }
-}

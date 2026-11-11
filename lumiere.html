@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="lumiere.css">
 </head>
-<body>
+<body class="fluid">
 
   <!-- ═══════════════════════════════════════
        STICKY SITE HEADER (outside main grid)
@@ -112,17 +112,17 @@
     <div class="content-slider mt-md" id="exhibition-slider">
 
       <!-- Slide 1 -->
-      <div id="exh_page_1" class="slider-page" style="height:1070px">
+      <div id="exh_page_1" class="slider-page" data-fit="1520" style="height:1070px">
         <div class="slide-cell" style="left:18px;top:0;width:calc(25% - 36px);height:516px">
-          <img src="assets/lumiere/open-4.png" alt="Lumiere open day">
+          <img style="aspect-ratio:1333/2000" loading="lazy" decoding="async" src="assets/lumiere/open-4.webp" alt="Lumiere open day">
         </div>
         <div class="slide-cell" style="left:calc(25% + 18px);top:0;width:calc(75% - 36px);height:621px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/Lumiere%20open%20day%20video_web.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:18px;top:552px;width:calc(25% - 36px);height:518px">
-          <img src="assets/lumiere/open-1.png" alt="Lumiere open day">
+          <img style="aspect-ratio:1333/2000" loading="lazy" decoding="async" src="assets/lumiere/open-1.webp" alt="Lumiere open day">
         </div>
         <p class="slide-text t-switzer-light" style="left:calc(50% + 18px);top:776px;width:calc(50% - 36px)">
           As a part of the MDS Unleashed open day event, our project was selected to exhibit on behalf of the BMD course to potential students and their parents. The event was a large success as visitors enjoyed the experience with huge smiles and marveled at the installation. The installation was modified to be very responsive due to the quick try and go nature of such events and proved to be an incredibly valuable time where we got very informative user testing done.
@@ -130,17 +130,17 @@
       </div>
 
       <!-- Slide 2 -->
-      <div id="exh_page_2" class="slider-page" style="height:1070px;display:none">
+      <div id="exh_page_2" class="slider-page" data-fit="1520" style="height:1070px;display:none">
         <div class="slide-cell" style="left:18px;top:0;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/IMG_6522.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:calc(50% + 18px);top:0;width:calc(50% - 36px);height:483px">
-          <img src="assets/lumiere/open-10.png" alt="Lumiere open day visitors">
+          <img style="aspect-ratio:2400/1600" loading="lazy" decoding="async" src="assets/lumiere/open-10.webp" alt="Lumiere open day visitors">
         </div>
         <div class="slide-cell" style="left:18px;top:445px;width:calc(50% - 36px);height:625px">
-          <img src="assets/lumiere/open-8.png" alt="Lumiere open day">
+          <img style="aspect-ratio:2400/1600" loading="lazy" decoding="async" src="assets/lumiere/open-8.webp" alt="Lumiere open day">
         </div>
         <p class="slide-text t-switzer-light" style="left:calc(50% + 18px);top:776px;width:calc(50% - 36px)">
           There was a huge range of different visitors throughout the day, from families, to groups of friends and even the MDS media team that interviewed us. There were some hiccups- like the Unreal executable that kept on shifting the camera every 15 minutes and the absolute chaos of the setup process. Despite those moments however, it was incredibly rewarding to see all these different people having fun and marveling at the work we created.
@@ -158,7 +158,7 @@
 
     <div class="context-grid">
       <div class="context-left">
-        <img class="context-screenshot" src="assets/lumiere/context-screenshot.png" alt="Research reference">
+        <img style="aspect-ratio:677/859" loading="lazy" decoding="async" class="context-screenshot" src="assets/lumiere/context-screenshot.png" alt="Research reference">
         <div class="urbaniac-section">
           <p class="urbaniac-title t-mono-light">[The Urbaniac]</p>
           <p class="urbaniac-item t-mono-light mt-xs">Sensory bottleneck</p>
@@ -190,24 +190,24 @@
     <div class="content-slider mt-md" id="experiments-slider">
 
       <!-- Experiment 1: MakeyMakey + conductive elements -->
-      <div id="lum_exp_page_1" class="slider-page" style="height:1070px">
+      <div id="lum_exp_page_1" class="slider-page" data-fit="1520" style="height:1070px">
         <div class="slide-cell" style="left:18px;top:0;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/TEST2.mp4" type="video/mp4">
           </video>
         </div>
-        <div style="position:absolute;left:calc(50% + 18px);top:0;width:calc(50% - 36px);height:407px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-          <div style="transform:rotate(-90deg);flex-shrink:0;width:407px;height:calc(50vw - 218px);position:relative;overflow:hidden">
-            <img src="assets/lumiere/img-5401.png" alt="Rock with copper tape" style="position:absolute;width:134.73%;height:100.98%;left:-34.73%;top:-0.92%;max-width:none">
+        <div class="slide-rotated" data-fit-small="742" style="position:absolute;left:calc(50% + 18px);top:0;width:calc(50% - 36px);height:407px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+          <div style="transform:rotate(-90deg);flex-shrink:0;width:407px;height:742px;position:relative;overflow:hidden">
+            <img loading="lazy" decoding="async" src="assets/lumiere/img-5401.webp" alt="Rock with copper tape" style="position:absolute;width:134.73%;height:100.98%;left:-34.73%;top:-0.92%;max-width:none;aspect-ratio:2400/1800">
           </div>
         </div>
         <div class="slide-cell" style="left:18px;top:443px;width:calc(25% - 36px);height:627px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/tEST1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:calc(25% + 18px);top:443px;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/test3.mp4" type="video/mp4">
           </video>
         </div>
@@ -217,22 +217,22 @@
       </div>
 
       <!-- Experiment 2: Peppers projection boxes -->
-      <div id="lum_exp_page_2" class="slider-page" style="height:1070px;display:none">
+      <div id="lum_exp_page_2" class="slider-page" data-fit="1520" style="height:1070px;display:none">
         <div class="slide-cell" style="left:18px;top:0;width:calc(25% - 36px);height:453px">
-          <img src="assets/lumiere/peppersmaking.jpg" alt="Building acrylic projection boxes">
+          <img style="aspect-ratio:1500/2000" loading="lazy" decoding="async" src="assets/lumiere/peppersmaking.webp" alt="Building acrylic projection boxes">
         </div>
         <div class="slide-cell" style="left:calc(25% + 18px);top:0;width:calc(25% - 36px);height:786px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/pepperstesting.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:calc(50% + 18px);top:0;width:calc(50% - 36px);height:786px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/pepperstesting2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:18px;top:489px;width:calc(25% - 36px);height:460px">
-          <img src="assets/lumiere/peppersmaking1.jpg" alt="Acrylic box detail">
+          <img style="aspect-ratio:2400/1800" loading="lazy" decoding="async" src="assets/lumiere/peppersmaking1.webp" alt="Acrylic box detail">
         </div>
         <p class="slide-text t-switzer-light" style="left:calc(50% + 18px);top:992px;width:calc(50% - 36px)">
           To provide visual feedback for the rock and flowers, we planned on creating smaller peppers projections for them. Through testing we found that it looked best when the projections were transparent so I built some acrylic boxes for them.
@@ -252,39 +252,39 @@
     <div class="content-slider mt-md" id="production-slider">
 
       <!-- Slide 1: user testing videos (2×2 grid) -->
-      <div id="lum_prod_page_1" class="slider-page" style="height:965px">
+      <div id="lum_prod_page_1" class="slider-page" data-fit="1520" style="height:965px">
         <div class="slide-cell" style="left:18px;top:0;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/usertest.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:calc(50% + 18px);top:0;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/usertesting2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:18px;top:439px;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/usertest3.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-cell" style="left:calc(50% + 18px);top:439px;width:calc(50% - 36px);height:407px">
-          <video autoplay muted loop playsinline>
+          <video muted loop playsinline preload="none" data-lazy-play>
             <source src="assets/lumiere/usertest4.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
       <!-- Slide 2: setup photography -->
-      <div id="lum_prod_page_2" class="slider-page" style="height:965px;display:none">
+      <div id="lum_prod_page_2" class="slider-page" data-fit="1520" style="height:965px;display:none">
         <div class="slide-cell" style="left:18px;top:0;width:calc(25% - 36px);height:420px">
-          <img src="assets/lumiere/setup1.jpg" alt="Installation setup">
+          <img style="aspect-ratio:1500/2000" loading="lazy" decoding="async" src="assets/lumiere/setup1.webp" alt="Installation setup">
         </div>
         <div class="slide-cell" style="left:calc(25% + 18px);top:0;width:calc(75% - 36px);height:965px">
-          <img src="assets/lumiere/setup.JPG" alt="Installation overview">
+          <img style="aspect-ratio:2400/1800" loading="lazy" decoding="async" src="assets/lumiere/setup.webp" alt="Installation overview">
         </div>
         <div class="slide-cell" style="left:18px;top:443px;width:calc(25% - 36px);height:486px">
-          <img src="assets/lumiere/setup3.jpg" alt="Installation detail">
+          <img style="aspect-ratio:1500/2000" loading="lazy" decoding="async" src="assets/lumiere/setup3.webp" alt="Installation detail">
         </div>
       </div>
 
@@ -305,7 +305,7 @@
     <div class="section-divider mt-2xl" aria-hidden="true"></div>
 
     <div class="span-2-4 mt-xl">
-      <img class="section-img" style="height:594px" src="assets/lumiere/unreal.png" alt="Unreal Engine scene setup">
+      <img loading="lazy" decoding="async" class="section-img" style="height:594px;aspect-ratio:2400/1291" src="assets/lumiere/unreal.webp" alt="Unreal Engine scene setup">
     </div>
     <p class="span-3-4 context-heading mt-md">For beautiful, livetime visuals with logic and Touchdesigner integration, Unreal Engine was a no brainer for our living system.</p>
     <p class="span-3-4 context-body mt-lg">Although Unreal was completely unchartered territory for me, its powerful realtime graphics, game logic, compatibility with Blender and TouchDesigner undeniably made it the best tool for the job.</p>
@@ -315,8 +315,8 @@
 
     <div class="bu-layout mt-xl">
       <div class="bu-imgs">
-        <img class="section-img" style="height:407px" src="assets/lumiere/blenderock.png" alt="Rock modeled in Blender">
-        <img class="section-img" style="height:407px" src="assets/lumiere/unrealrock.png" alt="Rock in Unreal Engine">
+        <img loading="lazy" decoding="async" class="section-img" style="height:407px;aspect-ratio:1920/1080" src="assets/lumiere/blenderock.webp" alt="Rock modeled in Blender">
+        <img loading="lazy" decoding="async" class="section-img" style="height:407px;aspect-ratio:2400/1145" src="assets/lumiere/unrealrock.webp" alt="Rock in Unreal Engine">
       </div>
       <div class="bu-text">
         <p class="lm-label t-mono-light">[BLENDER + UNREAL]</p>
@@ -326,17 +326,17 @@
 
     <!-- ── NIAGARA + BLUEPRINT ── -->
     <div class="span-2-3 mt-18">
-      <img class="section-img" style="height:365px" src="assets/lumiere/nsrain.png" alt="Niagara particle rain system">
+      <img loading="lazy" decoding="async" class="section-img" style="height:365px;aspect-ratio:2400/1211" src="assets/lumiere/nsrain.webp" alt="Niagara particle rain system">
     </div>
     <div class="span-2-4 mt-18">
-      <img class="section-img" style="height:575px" src="assets/lumiere/rainbp.png" alt="Rain blueprint">
+      <img loading="lazy" decoding="async" class="section-img" style="height:575px;aspect-ratio:2400/1250" src="assets/lumiere/rainbp.webp" alt="Rain blueprint">
     </div>
     <p class="span-col2 lm-label t-mono-light mt-sm">[NIAGARA + BLUEPRINT]</p>
     <p class="span-2-3 context-body mt-xs">Rain was created through Unreal's unique niagara particle system. The rain intensity (spawn rate) was promoted to a variable parameter that was called through the blueprint system. The intensity would increase the longer it rained and the blueprint was set up in a way that would trigger the foliage and lily growth</p>
 
     <!-- ── ROCK BLUEPRINT ── -->
     <div class="span-1-4 mt-xl">
-      <img class="section-img" style="height:730px" src="assets/lumiere/rockbp.png" alt="Rock blueprint system">
+      <img loading="lazy" decoding="async" class="section-img" style="height:730px;aspect-ratio:2400/1181" src="assets/lumiere/rockbp.webp" alt="Rock blueprint system">
     </div>
     <p class="span-col3 lm-label t-mono-light mt-xs">[ROCK BLUEPRINT]</p>
     <p class="span-3-4 context-body mt-xs">The rock and the foliage was given its own blueprint. In short, the foliage assets were set to all run on the event tickrate (for OSC) and to listen for the variable: isitRaining? In a nutshell, if OSC is equal to 1 (water is being touched), it would rain and if rain=true, trigger foliage and lily_growth animation and reverse if water is not being touched (OSC&lt;1)</p>
@@ -344,24 +344,24 @@
     <!-- ── LILY MODELING ── -->
     <div class="side-by-side mt-xl">
       <div class="span-1-2">
-        <img class="section-img" src="assets/lumiere/lilywireframe.png" alt="Lily wireframe model">
+        <img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" class="section-img" src="assets/lumiere/lilywireframe.webp" alt="Lily wireframe model">
       </div>
       <div class="span-3-4">
-        <img class="section-img" src="assets/lumiere/lilybone.png" alt="Lily bone rig">
+        <img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" class="section-img" src="assets/lumiere/lilybone.webp" alt="Lily bone rig">
       </div>
     </div>
     <div class="side-by-side mt-18">
       <div class="span-1-2">
-        <img class="section-img" src="assets/lumiere/lilyrender.png" alt="Lily render">
+        <img style="aspect-ratio:1920/1080" loading="lazy" decoding="async" class="section-img" src="assets/lumiere/lilyrender.webp" alt="Lily render">
       </div>
       <div class="span-3-4">
-        <video class="section-img" autoplay muted loop playsinline>
+        <video class="section-img" muted loop playsinline preload="none" data-lazy-play>
           <source src="assets/lumiere/lilygrowth.mp4" type="video/mp4">
         </video>
       </div>
     </div>
     <div class="span-1-4 mt-18">
-      <video class="section-img" autoplay muted loop playsinline>
+      <video class="section-img" muted loop playsinline preload="none" data-lazy-play>
         <source src="assets/lumiere/lilybloom.mp4" type="video/mp4">
       </video>
     </div>
@@ -417,7 +417,7 @@
       return parseInt(p.style.height) || 0;
     }));
     slider.style.position = 'relative';
-    slider.style.height   = maxH + 'px';
+    slider.style.height   = 'calc(' + maxH + 'px * var(--fit, 1))';
 
     pages.forEach(function (p) {
       p.style.position      = 'absolute';
@@ -437,6 +437,7 @@
         var active = (i + 1 === ep);
         p.style.visibility    = active ? 'visible' : 'hidden';
         p.style.pointerEvents = active ? 'auto'    : 'none';
+        p.classList.toggle('is-active', active);   // phones show only this one, stacked
       });
       if (indicator) indicator.textContent = ep + '/' + total;
     }
@@ -529,5 +530,7 @@
 
 }());
 </script>
+<script src="fit.js"></script>
+<script src="lazy.js" defer></script>
 </body>
 </html>
