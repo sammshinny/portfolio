@@ -11,8 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="play.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    } }
+  </script>
 </head>
-<body>
+<body class="fluid">
 
   <!-- ── HEADER ── -->
   <header class="header">
@@ -25,41 +31,131 @@
     </nav>
   </header>
 
-  <!-- ── MAIN — 4-COLUMN GRID ──
-       margin: 0 200px creates the outer rails.
-       Grid lines via background-image (no overlay div).
-  ── -->
   <main>
 
-    <!-- ── PHOTO COLLAGE ──
-         Positions converted from 1920px Figma canvas to
-         content-area space (1520px = viewport − 400px rails).
-         left values = Figma left − 200px rail.
-         Percentages are of the 1520px content width:
-           col 1 start = 0%   (0px)
-           col 2 start = 25%  (380px)
-           col 3 start = 50%  (760px)
-           col 4 start = 75%  (1140px)
+    <!-- ── PEGBOARD ──
+         The list below is the content. play.js reads it and hangs each
+         item on a 3D pegboard (tablet and desktop), in this order, with
+         slightly random spacing. On phones, with reduced motion, or without
+         WebGL the list itself is shown.
+
+         Adding a piece = one <li>:
+           data-w, data-h    size on the board in mm (hole pitch is 40 mm, board 1280 mm wide)
+           <img>             a still
+           <video>           its poster shows on the board; plays on hover (silent)
+                             and with sound once opened. Mark videos that have
+                             sound with data-sound; leave out "muted" on those.
+           several <img>/<video> inside <div class="play-media"> (li class="play-stack"):
+                             one piece with the others stacked behind; ← → flips
+                              data-fit="contain" on the li: each image keeps its own shape
+                             inside the w x h box (for mixed portrait / landscape photos)
+           <a href>          optional link, opened from the caption
+         Pieces without an <img> or <video> show as grey placeholders.
     ── -->
     <section class="play-section">
 
-      <!-- IMG_2376: circuit board / electronics setup -->
-      <div class="play-photo" style="left:18px;top:19px;width:360px;height:480px">
-        <img src="assets/play/img-2376.png" alt="Electronics build">
+      <div class="peg-stage" aria-hidden="true">
+        <div class="peg-caption" hidden>
+          <p class="peg-caption-text t-mono-regular"></p>
+          <a class="peg-caption-link t-mono-regular" hidden>[Open ↗]</a>
+          <span class="peg-caption-nav t-mono-light" hidden>
+            <button class="peg-prev" type="button" aria-label="Previous">←</button>
+            <span class="peg-count">1 / 1</span>
+            <button class="peg-next" type="button" aria-label="Next">→</button>
+          </span>
+          <button class="peg-sound t-mono-light" type="button" hidden>[Sound on]</button>
+          <button class="peg-caption-close t-mono-light" type="button">[Close ×]</button>
+        </div>
       </div>
 
-      <!-- Media: Ableton / controller setup -->
-      <div class="play-photo" style="left:calc(25% + 18px);top:19px;width:380px;height:676px;background:#d8d8d8"></div>
+      <ul class="play-list">
+        <li class="play-stack" data-w="460" data-h="460" data-fit="contain">
+          <div class="play-media">
+            <img src="assets/play/photo/hehe-31.jpg" alt="Film photo: baker at the counter" loading="lazy">
+            <img src="assets/play/photo/hehe-34.jpg" alt="Film photo: cup on a table" loading="lazy">
+            <img src="assets/play/photo/img-4558.jpg" alt="Film photo: shopfronts" loading="lazy">
+            <img src="assets/play/photo/img-9665.jpg" alt="Film photo: kitchen wall with posters" loading="lazy">
+            <img src="assets/play/photo/img-4571.jpg" alt="Film photo: autumn campus" loading="lazy">
+            <img src="assets/play/photo/img-9752.jpg" alt="Film photo: lying on a pier" loading="lazy">
+          </div>
+          <p class="t-mono-regular">My favourite photos on film</p>
+        </li>
 
-      <!-- Pingu: 3D rendered character -->
-      <div class="play-photo" style="left:calc(50% + 145px);top:19px;width:770px;height:433px">
-        <img src="assets/play/pingu.png" alt="Pingu 3D render">
-      </div>
+        <li data-w="520" data-h="293">
+          <video src="assets/play/video/climate-quest-film.mp4" poster="assets/play/video/climate-quest-film.jpg" data-sound loop playsinline preload="none" controls></video>
+          <p class="t-mono-regular">Climate Quest (2025)</p>
+        </li>
 
-      <!-- Coha ring: silver ring render -->
-      <div class="play-photo" style="left:calc(75% + 30px);top:476px;width:505px;height:284px">
-        <img src="assets/play/coha-ring.png" alt="Coha ring 3D render">
-      </div>
+        <li data-w="520" data-h="293">
+          <img src="assets/play/pingu.png" alt="Pingu keycap 3D render" loading="lazy">
+          <p class="t-mono-regular">Pingu keycap, coming soon</p>
+        </li>
+
+        <li data-w="480" data-h="270">
+          <video src="assets/play/video/zen.mp4" poster="assets/play/video/zen.jpg" data-sound loop playsinline preload="none" controls></video>
+          <p class="t-mono-regular">Zen explainer (2024)</p>
+        </li>
+
+        <li data-w="440" data-h="248">
+          <img src="assets/play/coha-ring.png" alt="SNEK ring 3D render" loading="lazy">
+          <p class="t-mono-regular">“SNEK” ring, modelled and rendered (2025)</p>
+        </li>
+
+        <li data-w="480" data-h="252">
+          <img src="assets/play/photo/heavy-metal-birds-posts.jpg" alt="Heavy Metal Birds social posts" loading="lazy">
+          <p class="t-mono-regular">Heavy Metal Birds carousel (2024)</p>
+        </li>
+
+        <li data-w="270" data-h="480">
+          <video src="assets/play/video/heavy-metal-birds.mp4" poster="assets/play/video/heavy-metal-birds.jpg" data-sound loop playsinline preload="none" controls></video>
+          <p class="t-mono-regular">Heavy Metal Birds promo (2024)</p>
+        </li>
+
+        <li data-w="320" data-h="440">
+          <img src="assets/play/photo/graphic-novel-cover.jpg" alt="Gonjiam graphic novel cover" loading="lazy">
+          <p class="t-mono-regular">Gonjiam graphic novel cover (2024)</p>
+        </li>
+
+        <li class="play-stack" data-w="480" data-h="270">
+          <div class="play-media">
+            <video src="assets/play/video/lumiere-1.mp4" poster="assets/play/video/lumiere-1.jpg" muted loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/lumiere-2.mp4" poster="assets/play/video/lumiere-2.jpg" muted loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/lumiere-3.mp4" poster="assets/play/video/lumiere-3.jpg" muted loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/lumiere-4.mp4" poster="assets/play/video/lumiere-4.jpg" muted loop playsinline preload="none" controls></video>
+          </div>
+          <p class="t-mono-regular">3D animation practice (2026)</p>
+        </li>
+
+        <li class="play-stack" data-w="460" data-h="460" data-fit="contain">
+          <div class="play-media">
+            <img src="assets/play/photo/img-0006.jpg" alt="Film photo: street at night in the snow" loading="lazy">
+            <img src="assets/play/photo/img-4563.jpg" alt="Film photo: neon sign at night" loading="lazy">
+            <img src="assets/play/photo/img-9673.jpg" alt="Film photo: portrait at night" loading="lazy">
+            <img src="assets/play/photo/img-9698.jpg" alt="Film photo: shop full of old TVs" loading="lazy">
+          </div>
+          <p class="t-mono-regular">More favourite photos on film</p>
+        </li>
+
+        <li class="play-stack" data-w="480" data-h="270">
+          <div class="play-media">
+            <video src="assets/play/video/climate-quest-gameplay.mp4" poster="assets/play/video/climate-quest-gameplay.jpg" data-sound loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/climate-quest-intro.mp4" poster="assets/play/video/climate-quest-intro.jpg" muted loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/character-test.mp4" poster="assets/play/video/character-test.jpg" muted loop playsinline preload="none" controls></video>
+            <video src="assets/play/video/avocado.mp4" poster="assets/play/video/avocado.jpg" muted loop playsinline preload="none" controls></video>
+          </div>
+          <p class="t-mono-regular">Climate Quest game POC on Rive (2025)</p>
+        </li>
+
+        <li data-w="480" data-h="252">
+          <video src="assets/play/video/blender-modular.mp4" poster="assets/play/video/blender-modular.jpg" muted loop playsinline preload="none" controls></video>
+          <p class="t-mono-regular">Modular ring customisation system (2025)</p>
+        </li>
+
+        <li data-w="330" data-h="440">
+          <img src="assets/play/img-2376.png" alt="MIDI drum kit build" loading="lazy">
+          <p class="t-mono-regular">MIDI drum kit (2025)</p>
+        </li>
+      </ul>
 
     </section>
 
@@ -106,5 +202,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<script type="module" src="play.js"></script>
 </body>
 </html>

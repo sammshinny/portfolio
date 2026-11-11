@@ -1,32 +1,131 @@
 /* ─────────────────────────
-   PLAY — CONTENT SECTION
-   grid-column 1/-1 spans full content width.
-   Photos inside are absolutely positioned
-   relative to this 1520px-wide container.
-   min-height: Figma y=1139 − header 78px = 1061px.
+   PLAY — PEGBOARD
+   The <ul class="play-list"> is the content and the fallback.
+   play.js adds .peg-on to <html> when the 3D board is running
+   (tablet/desktop, motion allowed, WebGL works); the list is then
+   kept for screen readers and search engines but not shown.
 ───────────────────────── */
 .play-section {
   grid-column: 1 / -1;
   position: relative;
-  min-height: 1061px;
 }
 
-/* ─────────────────────────
-   PLAY — PHOTOS
-   Coordinates converted from 1920px Figma canvas
-   to content-area space (subtract 200px left rail).
-   Percentages are of the 1520px content width.
-───────────────────────── */
-.play-photo {
-  position: absolute;
-  overflow: hidden;
-}
+.peg-stage { display: none; position: relative; }
+.peg-on .peg-stage { display: block; }
 
-.play-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.peg-stage canvas {
   display: block;
+  width: 100%;
+  position: sticky;             /* pinned under the header while the page scrolls the board */
+  top: var(--header-h);
+  touch-action: pan-y;          /* never block page scrolling */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Caption box shown when a piece is opened (fixed: the board is taller than the screen) */
+.peg-caption {
+  position: fixed;
+  z-index: 50;
+  left: calc(var(--rail) + var(--gutter));
+  bottom: var(--gutter);
+  max-width: min(420px, calc(100% - 2 * var(--gutter)));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: var(--rule);
+  font-size: 16px;
+  line-height: 1.3;
+}
+.peg-caption[hidden] { display: none; }
+.peg-caption-text { flex: 1 1 100%; }
+.peg-caption-link { color: inherit; }
+.peg-caption-close {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  color: inherit;
+  cursor: pointer;
+}
+/* [←] 1 / 4 [→] and [Sound on]: same mono style as [Back to top ↑] */
+.peg-caption-nav { display: inline-flex; align-items: baseline; gap: 12px; }
+.peg-caption-nav[hidden],
+.peg-sound[hidden] { display: none; }
+.peg-caption-nav button,
+.peg-sound {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: normal;
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.peg-caption-nav button:hover,
+.peg-sound:hover { text-decoration: underline; }
+.peg-count { min-width: 3.5em; text-align: center; }
+
+.peg-caption-close:hover,
+.peg-caption-link:hover { text-decoration: underline; }
+
+/* ── The list (phones, reduced motion, no WebGL) ── */
+.play-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 18px;
+  padding: 40px var(--gutter) 80px;
+}
+
+.play-list img,
+.play-list video,
+.play-placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.play-placeholder { aspect-ratio: 3 / 5; background: #d8d8d8; }
+
+.play-list p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.play-list a { color: inherit; }
+
+/* A project with several images: swipe sideways through them */
+.play-media {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+.play-media > * { flex: 0 0 100%; scroll-snap-align: start; }
+
+@media (max-width: 767px) {
+  .play-list { grid-template-columns: 1fr; gap: 32px; padding: 24px var(--gutter) 56px; }
+}
+
+/* Kept readable for screen readers and search engines */
+.peg-on .play-list {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  padding: 0;
 }
 
 /* ─────────────────────────
@@ -97,6 +196,16 @@
   padding: 13px 0 40px 18px;
 }
 
+@media (max-width: 767px) {
+  .footer { padding: 0 var(--gutter); }
+  .footer-headline { font-size: 52px; letter-spacing: -1.6px; }
+  .footer-cols { grid-template-columns: 1fr; row-gap: 32px; }
+  .footer-contact { font-size: 16px; }
+  .footer-contact + .footer-contact { margin-top: 24px; }
+  .back-to-top { font-size: 16px; }
+  .footer-credits { padding-left: var(--gutter); }
+}
+
 /* ─────────────────────────
    SPACING TOKENS
 ───────────────────────── */
@@ -109,3 +218,8 @@
 .mt-2xl { margin-top: 120px; }
 .mb-sm  { margin-bottom: 24px; }
 .mb-md  { margin-bottom: 40px; }
+
+@media (max-width: 767px) {
+  .mt-xl  { margin-top: 48px; }
+  .mt-2xl { margin-top: 56px; }
+}

@@ -17,6 +17,23 @@
   --col-line:  rgba(0, 0, 0, 0.15);
 }
 
+/* ── Breakpoints (the same on every page) ──
+   desktop ≥ 1200px · tablet 768–1199px · phone < 768px
+   CSS can't put variables in @media, so these numbers are repeated
+   in each media query below and in play.js (BREAKPOINTS).
+   Pages opt in with <body class="fluid">; the others stay fixed-pixel
+   until they are made responsive. */
+@media (max-width: 1199px) {
+  .fluid { --rail: 40px; }
+  .fluid .header-nav { gap: 32px; }
+}
+@media (max-width: 767px) {
+  .fluid { --rail: 16px; --gutter: 12px; --header-h: 60px; }
+  .fluid .site-name { font-size: 26px; letter-spacing: -1.4px; }
+  .fluid .header-nav { gap: 16px; }
+  .fluid .header-nav a { font-size: 15px; letter-spacing: -1px; }
+}
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
